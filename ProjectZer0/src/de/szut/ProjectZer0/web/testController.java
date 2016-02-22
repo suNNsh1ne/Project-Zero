@@ -17,4 +17,36 @@ public class testController {
 			map.addAttribute("test", new testModel());	
 			return new ModelAndView("test/test", map);
 		}
+		
+		@RequestMapping("/login.htm")
+		public ModelAndView erpLogin()
+		{
+			ModelMap map = new ModelMap();
+			map.addAttribute("login", new testModel());	
+			return new ModelAndView("login/login", map);
+		}
+		
+		@RequestMapping("/loginCheck.htm")
+		public ModelAndView erpLoginCheck()
+		{
+			ModelMap map = new ModelMap();
+			map.addAttribute("login", new testModel());	
+			return new ModelAndView("login/loginCheck", map);
+		}
+		
+		@RequestMapping("/loginError.htm")
+		public ModelAndView erpLoginError()
+		{
+			ModelMap map = new ModelMap();
+			map.addAttribute("login", new testModel());	
+			return new ModelAndView("login/error", map);
+		}
+		
+		@RequestMapping("/successfullLogin.htm")
+		public ModelAndView erpLoginSuccessfull()
+		{
+			ModelMap map = new ModelMap();
+			map.addAttribute("login", new testModel());	
+			return new ModelAndView("login/successfullLogin", map);
+		}
 }
