@@ -1,9 +1,9 @@
 package de.szut.ProjectZer0.model;
 
-public class testModel {
+public class User {
 	private String testString;
 
-	public testModel()
+	public User()
 	{
 		testString = "Hallo Welt";
 	}
