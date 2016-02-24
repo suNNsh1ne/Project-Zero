@@ -1,13 +1,20 @@
 package de.szut.ProjectZer0.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 @Entity
 public class User {
 	private Integer id;
 	private String username;
 	private String password;
+	private Integer permissionPriority;
 	
 	public User() {}
 
+	@Id
+	@GeneratedValue
 	public Integer getId() {
 		return id;
 	}
@@ -30,6 +37,13 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Integer getPermissionPriority() {
+		return permissionPriority;
+	}
+
+	public void setPermissionPriority(Integer permissionPriority) {
+		this.permissionPriority = permissionPriority;
 	}
 
 
