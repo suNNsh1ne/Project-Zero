@@ -20,6 +20,10 @@ public class User {
 	
 	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "email")
+	private String email;
+	
 	@Column(name ="permissionPriority")
 	private Integer permissionPriority;
 	
@@ -56,6 +60,14 @@ public class User {
 
 	public void setPermissionPriority(Integer permissionPriority) {
 		this.permissionPriority = permissionPriority;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 
