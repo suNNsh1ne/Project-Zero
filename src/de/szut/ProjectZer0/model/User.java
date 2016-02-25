@@ -1,5 +1,7 @@
 package de.szut.ProjectZer0.model;
 
+import javax.persistence.Entity;
+
 @Entity
 public class User {
 	private Integer id;
