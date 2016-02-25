@@ -27,8 +27,7 @@
 		<property name="dataSource" ref="myDataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>de.szut.hibernateTest.model.Person</value>
-				<value>de.szut.hibernateTest.model.Address</value>
+				<value>de.szut.ProjectZer0.model.User</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -39,4 +38,8 @@
 			</props>
 		</property>
 	</bean>
+	<bean id="myUserDAO" class="de.szut.ProjectZer0.dao.UserDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
 </beans>
