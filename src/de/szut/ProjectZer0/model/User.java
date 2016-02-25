@@ -1,14 +1,26 @@
 package de.szut.ProjectZer0.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "USER")
 public class User {
-	private Integer id;
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "user_id")
+	private Integer user_id;
+	
+	@Column(name = "username")
 	private String username;
+	
+	@Column(name = "password")
 	private String password;
+	@Column(name ="permissionPriority")
 	private Integer permissionPriority;
 	
 	public User() {}
@@ -16,11 +28,11 @@ public class User {
 	@Id
 	@GeneratedValue
 	public Integer getId() {
-		return id;
+		return user_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getUsername() {
