@@ -5,6 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import de.szut.ProjectZer0.model.User;
+import de.szut.ProjectZer0.dao.UserDAOImpl;
 
 @Controller
 public class LoginController {
@@ -15,8 +16,9 @@ public class LoginController {
 	@RequestMapping("/login.htm")
 	public ModelAndView erpLogin() {
 		ModelMap map = new ModelMap();
-
 		map.addAttribute("login", new User());
+		UserDAOImpl UserDAOimpl = new UserDAOImpl();
+		UserDAOimpl.generateTestUsers();
 		return new ModelAndView("login/login", map);
 	}
 
