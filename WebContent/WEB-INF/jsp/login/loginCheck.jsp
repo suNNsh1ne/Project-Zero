@@ -9,7 +9,7 @@
         String username=request.getParameter("username");
         String password=request.getParameter("password");
        
-        if((username.equals("anurag") && password.equals("jain")))
+        if((username.equals("test") && password.equals("test")))
             {
             session.setAttribute("username",username);
             response.sendRedirect("successfullLogin.htm");
