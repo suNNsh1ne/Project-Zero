@@ -1,21 +1,27 @@
 package de.szut.ProjectZer0.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "USER")
 public class User {
-	private Integer id;
-	private String username;
-	private String password;
-<<<<<<< HEAD
-=======
 	
+	@Column(name = "id")
+	private Integer id;
+	
+	@Column(name = "username")
+	private String username;
+	
+	@Column(name = "password")
+	private String password;
+
 	@Column(name = "email")
 	private String email;
 	
 	@Column(name ="permissionPriority")
 	private Integer permissionPriority;
->>>>>>> refs/remotes/origin/master
 	
 	public User() {}
 
