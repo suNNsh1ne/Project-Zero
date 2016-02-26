@@ -17,8 +17,10 @@ public class LoginController {
 	public ModelAndView erpLogin() {
 		ModelMap map = new ModelMap();
 		map.addAttribute("login", new User());
+		
 		UserDAOImpl UserDAOimpl = new UserDAOImpl();
 		UserDAOimpl.generateTestUsers();
+		
 		return new ModelAndView("login/login", map);
 	}
 
