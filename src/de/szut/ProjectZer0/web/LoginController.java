@@ -19,7 +19,7 @@ public class LoginController {
 		map.addAttribute("login", new User());
 		
 		UserDAOImpl UserDAOimpl = new UserDAOImpl();
-		UserDAOimpl.generateTestUsers();
+		//UserDAOimpl.generateTestUser();
 		
 		return new ModelAndView("login/login", map);
 	}

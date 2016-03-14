@@ -2,8 +2,12 @@ package de.szut.ProjectZer0.dao;
 
 import java.util.List;
 
+
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,26 +15,26 @@ import de.szut.ProjectZer0.model.User;
 
 public class UserDAOImpl implements UserDAO{
 	private HibernateTemplate hibernateTemplate;
-	private SessionFactory sessionfactory;
+	@Autowired
+	private SessionFactory mySessionFactory;
 	
-	public void setSessionFactory(SessionFactory sessionFactory)
-	{
-		this.hibernateTemplate = new HibernateTemplate(sessionFactory);
-	}
+
 	
-	public void generateTestUsers(){
-		for(int i = 0; i < 10; i++){
-			User u = new User();
-			u.setId(i);
-			u.setPassword(null);
-			u.setUsername(Integer.toString(i));
-			sessionfactory.getCurrentSession().saveOrUpdate(u);
-		}
+	public void generateTestUser(){
+		Session session = mySessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		User u = new User();
+		u.setPassword("");
+		u.setUsername("test");
+		
+		session.save(u);
+		tx.commit();
 	}
 	
 	@Transactional
 	public void saveUser(User user) {
-		sessionfactory.getCurrentSession().saveOrUpdate(user);
+		mySessionFactory.getCurrentSession().saveOrUpdate(user);
 	}
 	@Transactional
 	public void delUser(User user) {
@@ -45,14 +49,14 @@ public class UserDAOImpl implements UserDAO{
 	
 	@Transactional
 	public User getUser(Integer id) {
-		return (User)sessionfactory.getCurrentSession().get(User.class, id);
+		return (User)mySessionFactory.getCurrentSession().get(User.class, id);
 	}
 
 	
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<User> getByName(String username) {
-		Query query = sessionfactory.getCurrentSession().createQuery("from User where name =" + username);
+		Query query = mySessionFactory.getCurrentSession().createQuery("from User where name =" + username);
 		//evtl änderung vornehmen
 		List<User> list = query.list();
 		return list;
