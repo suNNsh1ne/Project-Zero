@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import de.szut.ProjectZer0.dao.UserDAOImpl;
 import de.szut.ProjectZer0.model.User;
 
 @Controller
@@ -48,5 +50,13 @@ public class LoginController {
 		ModelMap map = new ModelMap();
 		map.addAttribute("login", new User());
 		return new ModelAndView("login/successfullLogin", map);
+	}
+	
+	@RequestMapping("/generateData.htm")
+	public ModelAndView erpLoginGenerateTestData() {		
+		
+		ModelMap map = new ModelMap();
+		map.addAttribute("login", new User());
+		return new ModelAndView("redirect:login.htm", map);
 	}
 }
