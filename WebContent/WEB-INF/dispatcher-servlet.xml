@@ -39,8 +39,4 @@
 		</property>
 	</bean>
 	
-	<bean id="myUserDAO" class="de.szut.ProjectZer0.dao.UserDAOImpl">
-		<property name="sessionFactory" ref="mySessionFactory"/>
-	</bean>
-	
 </beans>
