@@ -12,27 +12,28 @@ public class User {
 	
 	@Id
 	@GeneratedValue
-	@Column(name = "user_id")
-	private Integer user_id;
+	@Column(name = "USER_ID")
+	private double userId;
 	
-	@Column(name = "username")
+	@Column(name = "USERNAME")
 	private String username;
 	
-	@Column(name = "password")
+	@Column(name = "PASSWORD")
 	private String password;
-	@Column(name ="permissionPriority")
+	
+	@Column(name ="PERMISSION_PRIORITY")
 	private Integer permissionPriority;
 	
 	public User() {}
 
 	@Id
 	@GeneratedValue
-	public Integer getId() {
-		return user_id;
+	public double getUserId() {
+		return userId;
 	}
 
-	public void setId(Integer user_id) {
-		this.user_id = user_id;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getUsername() {

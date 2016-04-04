@@ -33,7 +33,7 @@ public class UserDAOImpl implements UserDAO{
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<User> listUser() {
-		return hibernateTemplate.find("from User");
+		return (List<User>) hibernateTemplate.find("from User");
 	}
 	
 	@Transactional
