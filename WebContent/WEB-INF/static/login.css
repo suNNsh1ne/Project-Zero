@@ -1,6 +1,6 @@
 body {
 	background: #4aa3df;
-	font-family: 'Raleway',sans-serif;s
+	font-family: 'Raleway',sans-serif;
 }
 
 #login {
@@ -18,12 +18,6 @@ body {
    text-shadow: 2px 2px #2980b9;
   color: white;
   text-align: left;
-}
-
-.button :hover {
-	border: 1px solid red;
-	border-radius: 3px;
-	margin: 5px;
 }
 
 #login a {

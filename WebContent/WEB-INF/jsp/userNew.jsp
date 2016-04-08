@@ -7,7 +7,10 @@
 <html>
  
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<c:set var="cp"
+	   value="${pageContext.request.servletContext.contextPath}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="${cp}/static/newUser.css">
     <title>Account Registration Form</title>
  
 <style>
@@ -20,7 +23,7 @@
 </head>
  
 <body>
- 
+ 	<div id="registration">
     <h2>Registration Form</h2>
   
     <form:form method="POST" modelAttribute="User">
@@ -28,19 +31,19 @@
         <table>
             <tr>
                 <td><label for="username">Username: </label> </td>
-                <td><form:input path="username" id="username"/></td>
+                <td><form:input path="username" placeholder="Username" id="username"/></td>
                 <td><form:errors path="username" cssClass="error"/></td>
             </tr>
          
             <tr>
                 <td><label for="password">Password: </label> </td>
-                <td><form:input path="password" id="password"/></td>
+                <td><form:input path="password" placeholder="Password" id="password"/></td>
                 <td><form:errors path="password" cssClass="error"/></td>
             </tr>
             
             <tr>
                 <td><label for="permissionPriority">Permission Priority: </label> </td>
-                <td><form:input path="permissionPriority" id="permissionPriority"/></td>
+                <td><form:input path="permissionPriority" placeholder="permissioPriority" id="permissionPriority"/></td>
                 <td><form:errors path="permissionPriority" cssClass="error"/></td>
             </tr>
      
@@ -61,5 +64,6 @@
     <br/>
     <br/>
     Go back to <a href="<c:url value='/menu/userList' />">List of All Accounts</a>
+    </div>
 </body>
 </html>
