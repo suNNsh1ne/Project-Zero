@@ -37,6 +37,12 @@
                 <td><form:input path="password" id="password"/></td>
                 <td><form:errors path="password" cssClass="error"/></td>
             </tr>
+            
+            <tr>
+                <td><label for="permissionPriority">Permission Priority: </label> </td>
+                <td><form:input path="permissionPriority" id="permissionPriority"/></td>
+                <td><form:errors path="permissionPriority" cssClass="error"/></td>
+            </tr>
      
             <tr>
                 <td colspan="3">

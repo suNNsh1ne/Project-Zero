@@ -31,7 +31,7 @@ public class MenuController {
         User user = new User();
         model.addAttribute("User", user);
         model.addAttribute("edit", false);
-        return "schimmel";
+        return "userNew";
     }
 
     @RequestMapping(value = { "/userNew" }, method = RequestMethod.POST)
@@ -39,7 +39,7 @@ public class MenuController {
             ModelMap model) {
  
         if (result.hasErrors()) {
-            return "schimmel";
+            return "userNew";
         }
          
         userService.saveUser(user);
@@ -53,7 +53,7 @@ public class MenuController {
     	
     	List<User> user = userService.getAllUser();
         model.addAttribute("User", user);
-        return "allUser";
+        return "userList";
     }
 	
     @RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
