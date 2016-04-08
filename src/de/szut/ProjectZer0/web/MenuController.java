@@ -22,13 +22,39 @@ public class MenuController {
     @Autowired
     UserService userService; 
 	
-	@RequestMapping("/test")
-	public String test() {
-		//ModelMap map = new ModelMap();
+    
+    
+    
+    
+	@RequestMapping(value = { "/userNew" }, method = RequestMethod.GET)
+    public String newAccount(ModelMap model) {
+        User user = new User();
+        model.addAttribute("User", user);
+        model.addAttribute("edit", false);
+        return "userNew";
+    }
 
-		//map.addAttribute("login", new User());
-		return "test";
-	}
+    @RequestMapping(value = { "/userNew" }, method = RequestMethod.POST)
+    public String saveAccount(User user, BindingResult result,
+            ModelMap model) {
+ 
+        if (result.hasErrors()) {
+            return "userNew";
+        }
+         
+        userService.saveUser(user);
+ 
+        model.addAttribute("success", "User " + user.getUsername()+ " registered successfully PETER");
+        return "success";
+    }
+    
+    @RequestMapping(value = { "/", "/userList" }, method = RequestMethod.GET)
+    public String listAllUser(ModelMap model){
+    	
+    	List<User> user = userService.getAllUser();
+        model.addAttribute("User", user);
+        return "userList";
+    }
 	
     @RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
     public String listAccounts(ModelMap model) {
@@ -38,28 +64,10 @@ public class MenuController {
         return "allUser";
     }
     
-	@RequestMapping(value = { "/new" }, method = RequestMethod.GET)
-    public String newAccount(ModelMap model) {
-        User user = new User();
-        model.addAttribute("User", user);
-        model.addAttribute("edit", false);
-        return "schimmel";
-    }
 
-    @RequestMapping(value = { "/new" }, method = RequestMethod.POST)
-    public String saveAccount(User user, BindingResult result,
-            ModelMap model) {
- 
-        if (result.hasErrors()) {
-            return "schimmel";
-        }
-
-         
-        userService.saveUser(user);
- 
-        model.addAttribute("success", "User " + user.getUsername()+ " registered successfully PETER");
-        return "success";
-    }
+    
+    
+    
 	@RequestMapping("/mitarbeiter")
 	public String mitarbeiter() {
 		

@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Hallo</title>
+    <title>All Users</title>
  
     <style>
         tr:first-child{
@@ -17,7 +17,7 @@
  
  
 <body>
-    <h2>List of accounts</h2>  
+    <h2>List of users</h2>  
     <table>
         <tr>
             <td>NAME</td><td>Password</td><td>ID</td><td>PermissionPriority</td><td></td>
@@ -26,10 +26,12 @@
             <tr>
             <td>${user.username}</td>
             <td>${user.password}</td>
+            <td>${user.userId}</td>
+            <td>${user.permissionPriority}</td>
             </tr>
         </c:forEach>
     </table>
     <br/>
-    <a href="<c:url value='/menu/new' />">Add New Account</a>
+    <a href="<c:url value='/menu/userNew' />">Add New Account</a>
 </body>
 </html>
