@@ -1,5 +1,6 @@
 body {
 	background: #4aa3df;
+	font-family: 'Raleway',sans-serif;s
 }
 
 #login {
@@ -13,6 +14,8 @@ body {
   line-height: 40px;
   font-size: 20px;
   font-weight: bold;
+  font-family: 'Raleway',sans-serif;
+   text-shadow: 2px 2px #2980b9;
   color: white;
   text-align: left;
 }
@@ -27,10 +30,13 @@ body {
 	font-size: 12px;
 	display: block;
 	text-decoration: none;
+	margin-left: -230px;
+	margin-top:5px;
+	color: #2980b9;
 }
 
 #login a:hover {
-	color: #4aa3df;
+	color: #E8534F;
 }
 
 .button {
@@ -45,7 +51,7 @@ body {
   color: white;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: #E8534F; /*#3498db*/
+  background: #E8534F;
   border: 0;
   border-bottom: 2px solid #2a8bcc;
   border-radius: 5px;
@@ -53,6 +59,11 @@ body {
   -webkit-box-shadow: inset 0 -2px #2a8bcc;
   box-shadow: inset 0 -2px #2a8bcc;
 }
+
+.button:hover {
+  color: #2a8bcc;
+}
+
 .button:active {
   top: 1px;
   outline: none;
