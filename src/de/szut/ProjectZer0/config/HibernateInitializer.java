@@ -17,6 +17,8 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import de.szut.ProjectZer0.model.User;
+
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({ "de.szut.ProjetZer0.model" })
@@ -29,7 +31,7 @@ public class HibernateInitializer {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "de.szut.ProjetZer0.model" });
+        sessionFactory.setAnnotatedClasses(new Class[] { User.class });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
      }
