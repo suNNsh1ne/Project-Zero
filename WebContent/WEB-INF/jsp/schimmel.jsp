@@ -54,6 +54,6 @@
     </form:form>
     <br/>
     <br/>
-    Go back to <a href="<c:url value='/menu/list' />">List of All Accounts</a>
+    Go back to <a href="<c:url value='/menu/userList' />">List of All Accounts</a>
 </body>
 </html>
