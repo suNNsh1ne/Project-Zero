@@ -3,6 +3,7 @@ package de.szut.ProjectZer0.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,9 +12,9 @@ import javax.persistence.Table;
 public class User {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USER_ID")
-	private double userId;
+	private int userId;
 	
 	@Column(name = "USERNAME")
 	private String username;
@@ -26,14 +27,12 @@ public class User {
 	
 	public User() {}
 
-	@Id
-	@GeneratedValue
-	public double getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUserId(int d) {
+		this.userId = d;
 	}
 
 	public String getUsername() {
