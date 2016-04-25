@@ -32,6 +32,7 @@
         </c:forEach>
     </table>
     <br/>
-    <a href="<c:url value='/menu/userNew' />">Add New Account</a>
+    <a href="<c:url value='/register' />">Add New Account</a>
+    <a href="<c:url value='/login' />">Back to Login</a>
 </body>
 </html>
