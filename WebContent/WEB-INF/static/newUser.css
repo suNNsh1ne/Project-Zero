@@ -14,19 +14,6 @@ body {
   text-align: left;
 }
 
-#registration a {
-	font-size: 12px;
-	display: block;
-	text-decoration: none;
-	margin-left: -230px;
-	margin-top:5px;
-	color: black; /*#2980b9*/
-}
-
-#registration a:hover {
-	color: #E8534F;
-}
-
 .button {
   position: relative;
   vertical-align: top;
