@@ -13,17 +13,16 @@
 <body>
 	<div style="text-align: center" id="login">
 	<h1>Bitte melden Sie sich an:</h1>
-		<form action="loginCheck.htm" method="post">
+		<form action="loginCheck" method="post">
 			<br /><input type="text" name="username" placeholder="Username" class="input_field"> 
 			<br /><input type="password" name="password" placeholder="Passwort" class="input_field">
 			<a href="">Passwort vergessen?</a> 
 			<br /><input type="submit" value="Login" class="button">
 		</form>
-		<form>
-			<input type="submit" value="Generieren" class="button">
+		<form action="register">
+			<input type="submit" value="Registrieren" class="button">
 		</form>		
 	</div>
 	<br />
-
 </body>
 </html>
