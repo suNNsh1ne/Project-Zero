@@ -19,8 +19,8 @@
 			<a href="">Passwort vergessen?</a> 
 			<br /><input type="submit" value="Login" class="button">
 		</form>
-		<form>
-			<input type="submit" value="Generieren" class="button">
+		<form action="register">
+			<input type="submit" value="Registrieren" class="button">
 		</form>		
 	</div>
 	<br />
