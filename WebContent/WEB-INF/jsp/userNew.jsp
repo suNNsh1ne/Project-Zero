@@ -30,20 +30,20 @@
         <form:input type="hidden" path="userId" id="userId"/>
         <table>
             <tr>
-                <td><label for="username">Username: </label> </td>
+                <td><label for="username"></label> </td>
                 <td><form:input path="username" placeholder="Username" id="username"/></td>
                 <td><form:errors path="username" cssClass="error"/></td>
             </tr>
          
             <tr>
-                <td><label for="password">Password: </label> </td>
+                <td><label for="password"></label> </td>
                 <td><form:input path="password" placeholder="Password" id="password"/></td>
                 <td><form:errors path="password" cssClass="error"/></td>
             </tr>
             
             <tr>
-                <td><label for="permissionPriority">Permission Priority: </label> </td>
-                <td><form:input path="permissionPriority" placeholder="permissioPriority" id="permissionPriority"/></td>
+                <td><label for="permissionPriority"></label> </td>
+                <td><form:input path="permissionPriority" placeholder="permissionPriority" id="permissionPriority"/></td>
                 <td><form:errors path="permissionPriority" cssClass="error"/></td>
             </tr>
      
@@ -51,10 +51,10 @@
                 <td colspan="3">
                     <c:choose>
                         <c:when test="${edit}">
-                            <input type="submit" value="Update"/>
+                            <input type="submit" value="Update" class="button"/>
                         </c:when>
                         <c:otherwise>
-                            <input type="submit" value="Register"/>
+                            <input type="submit" value="Register" class="button"/>
                         </c:otherwise>
                     </c:choose>
                 </td>
