@@ -11,7 +11,7 @@
 <title>JSP Page</title>
 </head>
 <body>
-	<div style="text-align: center" id="login">
+	<div class="main login">
 	<h1>Bitte melden Sie sich an:</h1>
 		<form action="loginCheck" method="post">
 			<br /><input type="text" name="username" placeholder="Username" class="input_field"> 

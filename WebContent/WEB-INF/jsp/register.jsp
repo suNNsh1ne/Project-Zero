@@ -9,7 +9,7 @@
 	<c:set var="cp"
 	   value="${pageContext.request.servletContext.contextPath}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="${cp}/static/newUser.css">
+    <link rel="stylesheet" href="${cp}/static/style.css">
     <title>Account Registration Form</title>
  
 <style>
@@ -22,7 +22,7 @@
 </head>
  
 <body>
- 	<div id="registration">
+ 	<div id="main">
     <h2>Registration Form</h2>
     <form:form method="POST" modelAttribute="User">
         <form:input type="hidden" path="userId" id="userId"/>
@@ -56,12 +56,13 @@
                         </c:otherwise>
                     </c:choose>
                 </td>
+                <td>
             </tr>
         </table>
     </form:form>
+    	<a href="<c:url value='/list' />"><button class="button">Back to List</button></a>
     <br/>
     <br/>
-    Go back to <a href="<c:url value='/list' />">List of All Accounts</a>
     </div>
 </body>
 </html>
