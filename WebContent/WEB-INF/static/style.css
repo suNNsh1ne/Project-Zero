@@ -54,12 +54,14 @@ h2 {
 	width:30%;
 }
 
-.main {
+#login {
 	text-align: center;
+	width: 30%;
 }
 
-.login {
-	width: 30%;
+.content {
+	margin-left: 250px;
+	margin-top: -950px;
 }
 
 input[type="text"], input[type="password"] {
