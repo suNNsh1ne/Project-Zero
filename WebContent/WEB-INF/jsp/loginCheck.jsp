@@ -12,10 +12,10 @@
         if((username.equals("test") && password.equals("test")))
             {
             session.setAttribute("username",username);
-            response.sendRedirect("successfullLogin.htm");
+            response.sendRedirect("successfullLogin");
             }
         else
-            response.sendRedirect("loginError.htm");
+            response.sendRedirect("loginError");
         %>
     </body>
 </html>

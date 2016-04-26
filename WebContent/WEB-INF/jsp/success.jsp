@@ -15,7 +15,7 @@
     <h1>message : ${success}</h1>
     <br/>
     <br/>
-    <button class="button"><a href="<c:url value='/menu/userList' />">Zurück</a></button>
+    <button class="button"><a href="<c:url value='/list' />">Zurück</a></button>
 </div>     
 </body>
  

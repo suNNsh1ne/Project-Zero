@@ -37,6 +37,8 @@
     </table>
     <a href="<c:url value='/menu/userNew' />"><button class="button">Add New Account</button></a>
     <br/>
+    <a href="<c:url value='/register' />">Add New Account</a>
+    <a href="<c:url value='/login' />">Back to Login</a>
 </div>
 </body>
 </html>
