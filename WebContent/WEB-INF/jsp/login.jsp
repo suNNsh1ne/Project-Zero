@@ -7,7 +7,7 @@
 <c:set var="cp"
 	value="${pageContext.request.servletContext.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${cp}/static/login.css">
+<link rel="stylesheet" href="${cp}/static/style.css">
 <title>JSP Page</title>
 </head>
 <body>
@@ -18,6 +18,7 @@
 			<br /><input type="password" name="password" placeholder="Passwort" class="input_field">
 			<a href="">Passwort vergessen?</a> 
 			<br /><input type="submit" value="Login" class="button">
+
 		</form>
 		<form action="register">
 			<input type="submit" value="Registrieren" class="button">
