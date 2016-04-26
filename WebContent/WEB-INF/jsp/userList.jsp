@@ -21,7 +21,7 @@
  
 <body>
 <div id="main">
-    <h2>List of users</h2>  
+    <h1>List of users</h1>  
     <table class="table table-hover">
         <tr>
             <td>NAME</td><td>Password</td><td>ID</td><td>PermissionPriority</td><td></td>
@@ -35,10 +35,9 @@
             </tr>
         </c:forEach>
     </table>
-    <a href="<c:url value='/menu/userNew' />"><button class="button">Add New Account</button></a>
+    <a href="<c:url value='/register' />"><button class="button">Add New Account</button></a>
     <br/>
-    <a href="<c:url value='/register' />">Add New Account</a>
-    <a href="<c:url value='/login' />">Back to Login</a>
+    <a href="<c:url value='/login' />"><button class="button">Back to Login</button></a>
 </div>
 </body>
 </html>
