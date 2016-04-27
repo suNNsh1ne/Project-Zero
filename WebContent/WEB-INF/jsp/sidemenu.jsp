@@ -15,7 +15,7 @@
 			<li><a href="<c:url value='/' />"><span><img src="<c:url value="static/images/home.png"/>"/></span></a></li>
 			<li class=''><a href="<c:url value='/list' />"><span><img src="<c:url value="static/images/userlist.png"/>"/></span></a>
 			<li><a href="<c:url value='/register' />"><span><img src="<c:url value="static/images/addnewuser.png"/>"/></span></a></li>
-			<li class='last'><a href="<c:url value='/register' />"><span><img src="<c:url value="static/images/articlelist.png"/>"/></span></a></li>
+			<li class='last'><a href="<c:url value='/login' />"><span><img src="<c:url value="static/images/articlelist.png"/>"/></span></a></li>
 		</ul>
 	</div>
 </body>
