@@ -4,15 +4,19 @@
  
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<c:set var="cp"
+	   value="${pageContext.request.servletContext.contextPath}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="${cp}/static/style.css">
 <title>Registration Confirmation Page</title>
 </head>
 <body>
-    message : ${success}
+<div id="registerSuccess">
+    <h1>message : ${success}</h1>
     <br/>
     <br/>
-    Go back to <a href="<c:url value='/list' />">List of All Accounts</a>
-     
+    <a href="<c:url value='/login' />"><button class="button">Zurück zum Login</button></a>
+</div>     
 </body>
  
 </html>	
