@@ -1,6 +1,7 @@
 body {
 	background: #4aa3df;
 	font-family: 'Raleway', sans-serif;
+	margin: 0;
 }
 
 h1 {
@@ -31,6 +32,7 @@ h2 {
 	width: 200px;;
 	height: 60px;
 	margin: 10px;
+	margin-top: 20px;
 	margin-left: 0px;
 	padding: 0;
 	font-size: 22px;
@@ -44,6 +46,7 @@ h2 {
 	cursor: pointer;
 	-webkit-box-shadow: inset 0 -2px #2a8bcc;
 	box-shadow: inset 0 -2px #2a8bcc;
+	float: left;
 }
 
 .button:hover {
@@ -55,19 +58,41 @@ h2 {
 }
 
 #login {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15%;
 	text-align: center;
 	width: 30%;
 }
 
+.forgot_password {
+	width: 100%;
+	text-align: right;
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #E8534F;
+}
+
 .content {
-	margin-left: 250px;
-	margin-top: -950px;
+	float: left;
+	display: inline-block;
+	margin: 30px 0px 0px 30px;
+	position: absolute;
+	left: 130px;
 }
 
 input[type="text"], input[type="password"] {
 	background: #70B9E9;
 	display: block;
 	margin: 2px;
+	min-width: 400px;
 	width: 100%;
 	height: 45px;
 	font-family: sans-serif;
@@ -79,7 +104,7 @@ input[type="text"], input[type="password"] {
 .table {
 	background: #70B9E9;
 	min-width:1000px;
-	margin-bottom: 20px;
+	margin: 20px 0px 20px 0px; 
 	border-collapse: collapse;
 	font-family: sans-serif;
 	border: none;
