@@ -5,8 +5,11 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+
 import de.szut.ProjectZer0.model.Mitarbeiter;
 
+@Repository("MitarbeiterDAO")
 public class MitarbeiterDAOImpl extends AbstractDAO<Integer, Mitarbeiter> implements MitarbeiterDAO{
     public Mitarbeiter findById(int id) {
         return getByKey(id);
