@@ -17,6 +17,9 @@ import de.szut.ProjectZer0.service.UserService;
 @Controller
 public class LoginController {
 		
+	@Autowired
+	UserService userService;	
+	
 	@RequestMapping("/login")
 	public String erpLogin() {
 		
@@ -24,13 +27,24 @@ public class LoginController {
 	}
 
 	@RequestMapping("/loginCheck")
-	public ModelAndView erpLoginCheck(@ModelAttribute("username") String username, @ModelAttribute("password") String password) {
+	public String erpLoginCheck(@ModelAttribute("username") String sUsername, @ModelAttribute("password") String sPassword) 
+	{	
+		try
+		{
+		User checkUser = userService.findUserByUsername(sUsername);
 		
-		//userDAO = userDAO.getByName(username);
+		if(sPassword.equals(checkUser.getPassword()))
+			{
+				return "successLogin";
+			}
 		
-		
-		ModelMap map = new ModelMap();
-		return new ModelAndView("loginCheck", map);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Kein User mit dem Namen gefunden");
+			return "error";
+		}
+		return "error";
 	}
 
 	@RequestMapping("/loginError")
@@ -39,12 +53,14 @@ public class LoginController {
 		return new ModelAndView("error", map);
 	}
 
-	@RequestMapping("/successfullLogin")
+	@RequestMapping("/successLogin")
 	public ModelAndView erpLoginSuccessfull() {
 		ModelMap map = new ModelMap();
-		return new ModelAndView("successfullLogin", map);
+		return new ModelAndView("successLogin", map);
 	}
 	
+	
+	// Testdaten hinzufügen TODO: Mehrere Datenpakete
 	@RequestMapping("/generateTestData")
 	public ModelAndView generateData() {
 		ModelMap map = new ModelMap();

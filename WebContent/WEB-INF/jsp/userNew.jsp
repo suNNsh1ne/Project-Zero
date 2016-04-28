@@ -10,20 +10,12 @@
 	<c:set var="cp"
 	   value="${pageContext.request.servletContext.contextPath}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="${cp}/static/newUser.css">
-    <title>Account Registration Form</title>
- 
-<style>
- 
-    .error {
-        color: #ff0000;
-    }
-</style>
- 
+    <link rel="stylesheet" href="${cp}/static/style.css">
+    <title>Account Registration Form</title> 
 </head>
  
 <body>
- 	<div id="registration">
+ 	<div id="main">
     <h2>Registration Form</h2>
   
     <form:form method="POST" modelAttribute="User">
@@ -32,19 +24,19 @@
             <tr>
                 <td><label for="username"></label> </td>
                 <td><form:input path="username" placeholder="Username" id="username"/></td>
-                <td><form:errors path="username" cssClass="error"/></td>
+                <td><form:errors path="username" class="error"/></td>
             </tr>
          
             <tr>
                 <td><label for="password"></label> </td>
-                <td><form:input path="password" placeholder="Password" id="password"/></td>
-                <td><form:errors path="password" cssClass="error"/></td>
+                <td><form:password path="password" placeholder="Password" id="password"/></td>
+                <td><form:errors path="password" class="error"/></td>
             </tr>
             
             <tr>
                 <td><label for="permissionPriority"></label> </td>
                 <td><form:input path="permissionPriority" placeholder="permissionPriority" id="permissionPriority"/></td>
-                <td><form:errors path="permissionPriority" cssClass="error"/></td>
+                <td><form:errors path="permissionPriority" class="error"/></td>
             </tr>
      
             <tr>
@@ -57,13 +49,13 @@
                             <input type="submit" value="Register" class="button"/>
                         </c:otherwise>
                     </c:choose>
+                    <a href="<c:url value='/menu/userList' />"><button class="button">Accountlist</button></a>
                 </td>
             </tr>
         </table>
     </form:form>
     <br/>
     <br/>
-    Go back to <a href="<c:url value='/menu/userList' />">List of All Accounts</a>
     </div>
 </body>
 </html>
