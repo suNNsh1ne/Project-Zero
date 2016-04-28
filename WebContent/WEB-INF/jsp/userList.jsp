@@ -40,9 +40,8 @@ tr:first-child {
 				</tr>
 			</c:forEach>
 		</table>
-		<a href="<c:url value='/register' />"><button class="button">Add
-				New Account</button></a> <br /> <a href="<c:url value='/login' />"><button
-				class="button">Back to Login</button></a>
+		<a href="<c:url value='/register' />"><button class="button">Add New Account</button></a> 
+		<a href="<c:url value='/login' />"><button class="button">Back to Login</button></a>
 	</div>
 </body>
 </html>
