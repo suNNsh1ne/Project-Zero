@@ -19,15 +19,16 @@ public class Mitarbeiter {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MITARBEITER_ID")
 	private double mitarbeiterId;
-	
+
 	@Column(name = "NAME")
-	private String Name; 
-	
+	private String Name;
+
 	@ManyToOne
-	@JoinColumn(name="LAGER_ID")
+	@JoinColumn(name = "LAGER_ID")
 	private Set<Lager> Lager;
-	
-	public Mitarbeiter() {}
+
+	public Mitarbeiter() {
+	}
 
 	public double getMitarbeiterId() {
 		return mitarbeiterId;
