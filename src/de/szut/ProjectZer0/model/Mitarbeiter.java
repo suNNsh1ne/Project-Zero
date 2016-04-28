@@ -18,7 +18,7 @@ public class Mitarbeiter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MITARBEITER_ID")
-	private double mitarbeiterId;
+	private int mitarbeiterId;
 	
 	@Column(name = "NAME")
 	private String Name; 
@@ -29,11 +29,11 @@ public class Mitarbeiter {
 	
 	public Mitarbeiter() {}
 
-	public double getMitarbeiterId() {
+	public int getMitarbeiterId() {
 		return mitarbeiterId;
 	}
 
-	public void setMitarbeiterId(double mitarbeiterId) {
+	public void setMitarbeiterId(int mitarbeiterId) {
 		this.mitarbeiterId = mitarbeiterId;
 	}
 

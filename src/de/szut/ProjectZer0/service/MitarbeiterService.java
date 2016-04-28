@@ -6,9 +6,9 @@ import de.szut.ProjectZer0.model.Mitarbeiter;
 
 public interface MitarbeiterService {
 	Mitarbeiter findById(int id);
-    void saveUser(Mitarbeiter user);  
-    void deleteUserByUsername(String username);
+    void saveMitarbeiter(Mitarbeiter mitarbeiter);  
+    void deleteMitarbeiterByName(String Name);
     List<Mitarbeiter> getAllMitarbeiter();
-    Mitarbeiter findUserByUsername(String username);
+    Mitarbeiter findMitarbeiterByName(String Name);
      
 }
