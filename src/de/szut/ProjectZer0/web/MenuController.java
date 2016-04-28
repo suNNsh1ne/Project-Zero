@@ -23,12 +23,12 @@ public class MenuController {
 		return "mitarbeiter";
 	}
 	
-	@RequestMapping("/artikelstamm")
+	@RequestMapping("/artikelstammList")
 	public String artikelstamm() {
 		//ModelMap map = new ModelMap();
 
 		//map.addAttribute("login", new User());
-		return "artikelstamm";
+		return "artikelstammList";
 	}
 	
 	@RequestMapping("/bestandsartikel")
