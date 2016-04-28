@@ -18,16 +18,22 @@ public class Mitarbeiter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MITARBEITER_ID")
+<<<<<<< HEAD
 	private int mitarbeiterId;
 	
+=======
+	private double mitarbeiterId;
+
+>>>>>>> refs/remotes/origin/Adrian-Test-Build
 	@Column(name = "NAME")
-	private String Name; 
-	
+	private String Name;
+
 	@ManyToOne
-	@JoinColumn(name="LAGER_ID")
+	@JoinColumn(name = "LAGER_ID")
 	private Set<Lager> Lager;
-	
-	public Mitarbeiter() {}
+
+	public Mitarbeiter() {
+	}
 
 	public int getMitarbeiterId() {
 		return mitarbeiterId;
