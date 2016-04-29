@@ -20,7 +20,7 @@ import javax.persistence.Table;
 		@Id
 		@GeneratedValue
 		@Column(name = "LIEFERANTEN_ID")
-		private double lieferantenId;
+		private int lieferantenId;
 		
 		@Column(name = "ADRESSE")
 		private String Adresse;
@@ -42,11 +42,11 @@ import javax.persistence.Table;
 
 		@Id
 		@GeneratedValue
-		public double getLieferantenId() {
+		public int getLieferantId() {
 			return lieferantenId;
 		}
 
-		public void setLieferantenId(double lieferantenId) {
+		public void setLieferantId(int lieferantenId) {
 			this.lieferantenId = lieferantenId;
 		}
 

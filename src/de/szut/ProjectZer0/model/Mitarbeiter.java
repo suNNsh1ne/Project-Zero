@@ -20,7 +20,6 @@ public class Mitarbeiter {
 	@Column(name = "MITARBEITER_ID")
 
 	private int mitarbeiterId;
-
 	@Column(name = "NAME")
 	private String Name;
 
