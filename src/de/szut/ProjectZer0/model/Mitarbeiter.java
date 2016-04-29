@@ -18,13 +18,9 @@ public class Mitarbeiter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MITARBEITER_ID")
-<<<<<<< HEAD
+	
 	private int mitarbeiterId;
 	
-=======
-	private double mitarbeiterId;
-
->>>>>>> refs/remotes/origin/Adrian-Test-Build
 	@Column(name = "NAME")
 	private String Name;
 
