@@ -18,7 +18,6 @@
 			<br /><input type="password" name="password" placeholder="Passwort" class="input_field">
 			<span class="forgot_password"><a href="">Passwort vergessen?</a></span>
 			<br /><input type="submit" value="Login" class="button">
-			<input type="submit" value="Registrieren" class="button">
 		</form>	
 	</div>
 	<br />

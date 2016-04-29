@@ -41,7 +41,7 @@ public class RegisterController {
         return "success";
     }
 	
-	@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/list"}, method = RequestMethod.GET)
 	public String listAllUser(HttpServletRequest req, ModelMap model)
 	{
 		if(req.getSession().getAttribute("user") != null)
