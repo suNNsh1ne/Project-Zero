@@ -1,5 +1,12 @@
 package de.szut.ProjectZer0.dao;
 
-public interface LagerDAO {
+import java.util.List;
+import de.szut.ProjectZer0.model.Lager;
 
+public interface LagerDAO {
+	Lager findById(int id);
+    void saveLager(Lager user);  
+    void deleteLagerByName(String name);
+    List<Lager> getAllLager();
+    Lager findLagerByName(String name);
 }

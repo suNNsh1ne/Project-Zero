@@ -13,7 +13,10 @@ import javax.persistence.Table;
 public class Lager {
 
 	@Column(name="LAGER_ID")
-	private double LagerID;
+	private int LagerID;
+	
+	@Column(name = "NAME")
+	private String name;
 	
 	@Column(name = "ORT")
 	private String Ort;
@@ -33,14 +36,22 @@ public class Lager {
 	
 	public Lager() {}
 
-	public double getLagerID() {
+	public int getLagerID() {
 		return LagerID;
 	}
 
-	public void setLagerID(double lagerID) {
+	public void setLagerID(int lagerID) {
 		LagerID = lagerID;
 	}
 
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String Name){
+		name = Name;
+	}
+	
 	public String getOrt() {
 		return Ort;
 	}
