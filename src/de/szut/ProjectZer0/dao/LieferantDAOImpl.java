@@ -1,5 +1,40 @@
 package de.szut.ProjectZer0.dao;
 
-public class LieferantDAOImpl {
+import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+import de.szut.ProjectZer0.model.Lieferant;
+
+@Repository("LieferantDAO")
+public class LieferantDAOImpl extends AbstractDAO<Integer, Lieferant> implements LieferantDAO{
+	
+	 
+    public Lieferant findById(int id) {
+        return getByKey(id);
+    }
+ 
+    public void saveLieferant(Lieferant Lieferant) {
+        persist(Lieferant);
+    }
+ 
+    public void deleteLieferantByAnsprechpartner(String Ansprechpartner) {
+        Query query = getSession().createSQLQuery("delete from Lieferant where Ansprechpartner = :Ansprechpartner");
+        query.setString("ssn", Ansprechpartner);
+        query.executeUpdate();
+    }
+ 
+    @SuppressWarnings("unchecked")
+    public List<Lieferant> getAllLieferant() {
+        Criteria criteria = createEntityCriteria();
+        return (List<Lieferant>) criteria.list();
+    }
+ 
+    public Lieferant findLieferantByAnsprechpartner(String Ansprechpartner) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("Ansprechpartner", Ansprechpartner));
+        return (Lieferant) criteria.uniqueResult();
+    }
 }
