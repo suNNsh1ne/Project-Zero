@@ -17,13 +17,24 @@ import de.szut.ProjectZer0.service.UserService;
 
 @Controller
 public class LoginController {
+	
+	boolean firstTime = true;
 
 	@Autowired
 	UserService userService;	
 	
 	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public String erpLogin() {
-
+		if(firstTime == true)
+		{
+		User user = new User();
+		user.setPassword("admin");
+		user.setUsername("admin");
+		user.setPermissionPriority(3);
+		userService.saveUser(user);
+		firstTime=false;
+		}
+		
 		return "login";
 	}
 
@@ -49,7 +60,6 @@ public class LoginController {
 		System.out.println(user.getUsername());
 		if(req.getSession().getAttribute("user") != null)
 		{
-			System.out.println("DRINNE");
 			return "userList";
 		}
 		else
@@ -60,7 +70,7 @@ public class LoginController {
 
 	private User fetchFromDatabaseIfValid(String username, String password) {
 		User user = userService.findUserByUsername(username);
-		if (password.equals(user.getPassword())) {
+		if (user != null && password.equals(user.getPassword())) {
 			return user;
 		}
 		return null;
