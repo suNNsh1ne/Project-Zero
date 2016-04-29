@@ -5,70 +5,48 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import de.szut.ProjectZer0.dao.MitarbeiterDAO;
 import de.szut.ProjectZer0.model.Mitarbeiter;
 
-/*
-@Service("UserService")
+
+@Service("MitarbeiterService")
 @Transactional
 public class MitarbeiterServiceImpl implements MitarbeiterService {
  
-    /*@Autowired
+    @Autowired
     private MitarbeiterDAO dao;
 
  
-    public void saveUser(User User) {
-        dao.saveUser(User);
+    public void saveMitarbeiter(Mitarbeiter Mitarbeiter) {
+        dao.saveMitarbeiter(Mitarbeiter);
     }
  
-    public void updateUser(User User) {
-        User entity = dao.findById(User.getUserId());
+    public void updateMitarbeiter(Mitarbeiter Mitarbeiter) {
+    	Mitarbeiter entity = dao.findById(Mitarbeiter.getMitarbeiterId());
         if(entity!=null){
-        	entity.setUsername(User.getUsername());
-        	entity.setPassword(User.getPassword());
-        	entity.setPermissionPriority(User.getPermissionPriority());
+        	entity.setName(Mitarbeiter.getName());
 
         }
     }
  
-    public void deleteUserByUsername(String username){
-        dao.deleteUserByUsername(username);
+    public void deleteMitarbeiterByName(String Name){
+        dao.deleteMitarbeiterByName(Name);
     }
     
  
-    public List<User> getAllUser() {
-    	return dao.getAllUser();
+    public List<Mitarbeiter> getAllMitarbeiter() {
+    	return dao.getAllMitarbeiter();
     }
  
-    public User findUserByUsername(String username) {
-    	return dao.findUserByUsername(username);
+    public Mitarbeiter findMitarbeiterByName(String Name) {
+    	return dao.findMitarbeiterByName(Name);
     }
-
-	@Override
-	public User findById(int id) {
-		return dao.findById(id);
-	}
 
 	@Override
 	public Mitarbeiter findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findById(id);
 	}
+	
 
-	@Override
-	public void saveUser(Mitarbeiter user) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<Mitarbeiter> getAllMitarbeiter() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Mitarbeiter findUserByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}*/
+}
