@@ -1,5 +1,49 @@
 package de.szut.ProjectZer0.service;
 
-public class BestandsartikelServiceImpl {
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import de.szut.ProjectZer0.dao.BestandsartikelDAO;
+import de.szut.ProjectZer0.model.Bestandsartikel;
+
+@Service("BestandsartikelService")
+@Transactional
+public class BestandsartikelServiceImpl implements BestandsartikelService {
+ 
+    @Autowired
+    private BestandsartikelDAO dao;
+
+ 
+    public void saveBestandsartikel(Bestandsartikel Bestandsartikel) {
+        dao.saveBestandsartikel(Bestandsartikel);
+    }
+ 
+    public void updateBestandsartikel(Bestandsartikel Bestandsartikel) {
+        Bestandsartikel entity = dao.findById(Bestandsartikel.getBestandsartikelId());
+        if(entity!=null){
+        	entity.setArtikelstamm(Bestandsartikel.getArtikelstamm());
+
+        }
+    }
+ 
+    public void deleteBestandsartikelByArtikelstamm(String Artikelstamm){
+        dao.deleteBestandsartikelByArtikelstamm(Artikelstamm);
+    }
+    
+ 
+    public List<Bestandsartikel> getAllBestandsartikel() {
+    	return dao.getAllBestandsartikel();
+    }
+ 
+    public Bestandsartikel findBestandsartikelByArtikelstamm(String Artikelstamm) {
+    	return dao.findBestandsartikelByArtikelstamm(Artikelstamm);
+    }
+
+	@Override
+	public Bestandsartikel findById(int id) {
+		return dao.findById(id);
+	}
 }
