@@ -18,7 +18,7 @@ import javax.persistence.Table;
 		@Id
 		@GeneratedValue
 		@Column(name = "ARTIKELSTAMM_ID")
-		private double ArtikelstammId;
+		private int ArtikelstammId;
 		
 		@Column(name = "BEZEICHNUNG")
 		private String Bezeichnung;
@@ -44,7 +44,7 @@ import javax.persistence.Table;
 		
 		public Artikelstamm() {}
 
-		public double getArtikelstammId() {
+		public int getArtikelstammId() {
 			return ArtikelstammId;
 		}
 

@@ -1,6 +1,7 @@
 package de.szut.ProjectZer0.web;
 
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,35 +17,53 @@ import de.szut.ProjectZer0.service.UserService;
 
 @Controller
 public class LoginController {
-		
+
 	@Autowired
 	UserService userService;	
 	
 	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public String erpLogin() {
-		
+
 		return "login";
 	}
 
 	@RequestMapping("/loginCheck")
-	public String erpLoginCheck(@ModelAttribute("username") String sUsername, @ModelAttribute("password") String sPassword) 
-	{	
-		try
-		{
-		User checkUser = userService.findUserByUsername(sUsername);
-		
-		if(sPassword.equals(checkUser.getPassword()))
-			{
-				return "successLogin";
-			}
-		
+	public String erpLoginCheck(HttpServletRequest req) {
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+		User user = fetchFromDatabaseIfValid(username, password);
+
+		if (user == null) {
+			// send 'no user/password match' message
+			return "error";
+		} else {
+			req.getSession().setAttribute("user", user);
+			// send 'successful login' screen
+			return "redirect:ListOfUser";
 		}
-		catch(Exception e)
+	}
+
+	@RequestMapping("/ListOfUser")
+	private String returnUserList(HttpServletRequest req) {
+		User user = (User) req.getSession().getAttribute("user");
+		System.out.println(user.getUsername());
+		if(req.getSession().getAttribute("user") != null)
 		{
-			System.out.println("Kein User mit dem Namen gefunden");
+			System.out.println("DRINNE");
+			return "userList";
+		}
+		else
+		{
 			return "error";
 		}
-		return "error";
+	}
+
+	private User fetchFromDatabaseIfValid(String username, String password) {
+		User user = userService.findUserByUsername(username);
+		if (password.equals(user.getPassword())) {
+			return user;
+		}
+		return null;
 	}
 
 	@RequestMapping("/loginError")
@@ -58,15 +77,24 @@ public class LoginController {
 		ModelMap map = new ModelMap();
 		return new ModelAndView("successLogin", map);
 	}
-	
-	
+
 	// Testdaten hinzufügen TODO: Mehrere Datenpakete
 	@RequestMapping("/generateTestData")
 	public ModelAndView generateData() {
 		ModelMap map = new ModelMap();
-		
+
 		System.out.println("test erfolgreich");
 
 		return new ModelAndView("redirect:login", map);
 	}
+
+	/*static boolean validateUser(HttpServletRequest req) {
+		Object userAttribute = req.getSession().getAttribute("user");
+		if (user == userAttribute) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	*/
 }
