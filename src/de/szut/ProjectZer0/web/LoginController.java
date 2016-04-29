@@ -20,7 +20,7 @@ public class LoginController {
 	@Autowired
 	UserService userService;	
 	
-	@RequestMapping("/login")
+	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public String erpLogin() {
 		
 		return "login";

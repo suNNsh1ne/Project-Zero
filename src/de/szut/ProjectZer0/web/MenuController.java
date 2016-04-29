@@ -13,10 +13,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
 
+// home.jsp erreichbar über Menü
+
 @Controller
 @RequestMapping("/menu")
 public class MenuController {      
     
+	@RequestMapping("/home")
+	public String home() {
+		
+		return "home";
+	}
+	
 	@RequestMapping("/mitarbeiter")
 	public String mitarbeiter() {
 		

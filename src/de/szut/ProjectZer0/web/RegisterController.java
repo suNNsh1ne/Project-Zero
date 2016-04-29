@@ -39,7 +39,7 @@ public class RegisterController {
         return "success";
     }
 	
-	@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/list"}, method = RequestMethod.GET)
 	public String listAllUser(ModelMap model)
 	{
 		List<User> user = userService.getAllUser();
