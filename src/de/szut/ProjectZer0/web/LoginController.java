@@ -19,9 +19,9 @@ import de.szut.ProjectZer0.service.UserService;
 public class LoginController {
 
 	@Autowired
-	UserService userService;
-
-	@RequestMapping("/login")
+	UserService userService;	
+	
+	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public String erpLogin() {
 
 		return "login";

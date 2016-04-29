@@ -9,13 +9,6 @@
 <link rel="stylesheet" href="${cp}/static/style.css">
 <title>All Users</title>
 
-<style>
-tr:first-child {
-	font-weight: bold;
-	background-color: #C6C9C4;
-}
-</style>
-
 </head>
 
 
