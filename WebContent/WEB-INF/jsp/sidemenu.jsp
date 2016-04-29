@@ -20,7 +20,6 @@
 		
 		<ul>
 			<li><div class="logged_in_as">Eingeloggt: Fabianasasa Langeassas</div></li>
-		
 		</ul>
 	</div>
 </body>
