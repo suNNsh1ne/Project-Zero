@@ -25,7 +25,7 @@ import de.szut.ProjectZer0.service.UserService;
 @RequestMapping("/menu")
 public class MenuController {      
     
-	//@Autowired
+	@Autowired
 	ArtikelstammService artikelstammService;
 	
 	@Autowired
