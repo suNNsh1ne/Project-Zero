@@ -3,6 +3,8 @@ package de.szut.ProjectZer0.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,13 +18,30 @@ import de.szut.ProjectZer0.service.UserService;
 // home.jsp erreichbar über Menü
 
 @Controller
-@RequestMapping("/menu")
-public class MenuController {      
+public class MenuController {   
+	
+	@Autowired
+	UserService userService;
     
 	@RequestMapping("/home")
 	public String home() {
 		
 		return "home";
+	}
+	
+	@RequestMapping(value = {"/userlist"}, method = RequestMethod.GET)
+	public String listAllUser(HttpServletRequest req, ModelMap model)
+	{
+		if(req.getSession().getAttribute("user") != null)
+		{
+			List<User> user = userService.getAllUser();
+			model.addAttribute("User", user);
+			return "userList";
+		}
+		else
+		{
+			return "error";
+		}
 	}
 	
 	@RequestMapping("/mitarbeiter")

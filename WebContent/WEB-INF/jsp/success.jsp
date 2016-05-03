@@ -6,7 +6,7 @@
 <head>
 <c:set var="cp"
 	   value="${pageContext.request.servletContext.contextPath}" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Refresh" content="5;url=/ProjectZer0/home">
     <link rel="stylesheet" href="${cp}/static/style.css">
 <title>Registration Confirmation Page</title>
 </head>
