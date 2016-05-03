@@ -12,6 +12,7 @@ import de.szut.ProjectZer0.model.Artikelstamm;
 @Service("ArtikelstammService")
 @Transactional
 public class ArtikelstammServiceImpl {
+	
     @Autowired
     private ArtikelstammDAO dao;
 
