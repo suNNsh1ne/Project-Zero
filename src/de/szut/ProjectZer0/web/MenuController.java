@@ -22,8 +22,10 @@ import de.szut.ProjectZer0.service.UserService;
 // home.jsp erreichbar über Menü
 
 @Controller
-@RequestMapping("/menu")
-public class MenuController {      
+public class MenuController {   
+	
+	@Autowired
+	UserService userService;
     
 	@Autowired
 	ArtikelstammService artikelstammService;
@@ -35,6 +37,21 @@ public class MenuController {
 	public String home() {
 		
 		return "home";
+	}
+	
+	@RequestMapping(value = {"/userlist"}, method = RequestMethod.GET)
+	public String listAllUser(HttpServletRequest req, ModelMap model)
+	{
+		if(req.getSession().getAttribute("user") != null)
+		{
+			List<User> user = userService.getAllUser();
+			model.addAttribute("User", user);
+			return "userList";
+		}
+		else
+		{
+			return "error";
+		}
 	}
 	
 	@RequestMapping("/mitarbeiter")

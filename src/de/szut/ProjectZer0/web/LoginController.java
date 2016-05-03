@@ -52,23 +52,7 @@ public class LoginController {
 		} else {
 			req.getSession().setAttribute("user", user);
 			// send 'successful login' screen
-			return "redirect:ListOfUser";
-		}
-	}
-
-	@RequestMapping("/ListOfUser")
-	private String returnUserList(HttpServletRequest req, ModelMap model) {
-		User user = (User) req.getSession().getAttribute("user");
-		System.out.println(user.getUsername());
-		if(req.getSession().getAttribute("user") != null)
-		{
-			List<User> users = userService.getAllUser();
-			model.addAttribute("User", users);
-			return "userList";
-		}
-		else
-		{
-			return "error";
+			return "redirect:home";
 		}
 	}
 
@@ -80,18 +64,6 @@ public class LoginController {
 		return null;
 	}
 
-	@RequestMapping("/loginError")
-	public ModelAndView erpLoginError() {
-		ModelMap map = new ModelMap();
-		return new ModelAndView("error", map);
-	}
-
-	@RequestMapping("/successLogin")
-	public ModelAndView erpLoginSuccessfull() {
-		ModelMap map = new ModelMap();
-		return new ModelAndView("successLogin", map);
-	}
-
 	// Testdaten hinzufügen TODO: Mehrere Datenpakete
 	@RequestMapping("/generateTestData")
 	public ModelAndView generateData() {
@@ -101,14 +73,18 @@ public class LoginController {
 
 		return new ModelAndView("redirect:login", map);
 	}
-
-	/*static boolean validateUser(HttpServletRequest req) {
-		Object userAttribute = req.getSession().getAttribute("user");
-		if (user == userAttribute) {
-			return true;
-		} else {
-			return false;
+	
+	
+	@RequestMapping("/logout")
+	private String returnUserList(HttpServletRequest req) {
+		if(req.getSession().getAttribute("user") != null)
+		{
+			req.getSession().setAttribute("user", null);
+			return "login";
+		}
+		else
+		{
+			return "error";
 		}
 	}
-	*/
 }
