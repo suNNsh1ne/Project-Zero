@@ -37,8 +37,8 @@ public class RegisterController {
          
         userService.saveUser(user);
  
-        model.addAttribute("success", "User " + user.getUsername()+ " registered successfully.");
-        return "success";
+        //model.addAttribute("success", "User " + user.getUsername()+ " registered successfully.");
+        return "home";
     }
 	
 	@RequestMapping(value = {"/list"}, method = RequestMethod.GET)
