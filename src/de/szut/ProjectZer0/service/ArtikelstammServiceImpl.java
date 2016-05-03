@@ -24,6 +24,10 @@ public class ArtikelstammServiceImpl {
     	Artikelstamm entity = dao.findById(Artikelstamm.getArtikelstammId());
         if(entity!=null){
         	entity.setBezeichnung((Artikelstamm.getBezeichnung()));
+        	entity.setBeschreibung((Artikelstamm.getBeschreibung()));
+        	entity.setKategorie((Artikelstamm.getKategorie()));
+        	entity.setAnzahl((Artikelstamm.getAnzahl()));
+        	entity.setPreis((Artikelstamm.getPreis()));
         }
     }
  

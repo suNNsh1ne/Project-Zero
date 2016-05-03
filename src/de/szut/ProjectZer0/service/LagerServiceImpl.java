@@ -25,6 +25,11 @@ public class LagerServiceImpl implements LagerService {
         Lager entity = dao.findById(Lager.getLagerID());
         if(entity!=null){
         	entity.setName(Lager.getName());
+        	entity.setAuslastung(Lager.getAuslastung());
+        	entity.setBestandsartikel(Lager.getBestandsartikel());
+        	entity.setMitarbeiter(Lager.getMitarbeiter());
+        	entity.setOrt(Lager.getOrt());
+        	entity.setKapazität(Lager.getKapazität());
         }
     }
  

@@ -22,7 +22,7 @@ public class Lager {
 	private String Ort;
 	
 	@Column(name = "KAPAZITÄT")
-	private Integer Integer; 
+	private Integer Kapazität; 
 	
 	@Column(name ="AUSLASTUNG")
 	private Integer Auslastung;
@@ -60,12 +60,12 @@ public class Lager {
 		Ort = ort;
 	}
 
-	public Integer getInteger() {
-		return Integer;
+	public Integer getKapazität() {
+		return Kapazität;
 	}
 
-	public void setInteger(Integer integer) {
-		Integer = integer;
+	public void setKapazität(Integer integer) {
+		Kapazität = integer;
 	}
 
 	public Integer getAuslastung() {
