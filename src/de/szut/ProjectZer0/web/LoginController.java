@@ -1,5 +1,7 @@
 package de.szut.ProjectZer0.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -55,11 +57,13 @@ public class LoginController {
 	}
 
 	@RequestMapping("/ListOfUser")
-	private String returnUserList(HttpServletRequest req) {
+	private String returnUserList(HttpServletRequest req, ModelMap model) {
 		User user = (User) req.getSession().getAttribute("user");
 		System.out.println(user.getUsername());
 		if(req.getSession().getAttribute("user") != null)
 		{
+			List<User> users = userService.getAllUser();
+			model.addAttribute("User", users);
 			return "userList";
 		}
 		else
