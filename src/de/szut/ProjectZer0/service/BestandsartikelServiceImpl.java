@@ -25,7 +25,10 @@ public class BestandsartikelServiceImpl implements BestandsartikelService {
         Bestandsartikel entity = dao.findById(Bestandsartikel.getBestandsartikelId());
         if(entity!=null){
         	entity.setArtikelstamm(Bestandsartikel.getArtikelstamm());
-
+    		entity.setAnzahl(Bestandsartikel.getAnzahl());
+    		entity.setLager(Bestandsartikel.getLager());
+    		entity.setWarenausgang(Bestandsartikel.getWarenausgang());
+    		entity.setWareneingang(Bestandsartikel.getWareneingang());
         }
     }
  

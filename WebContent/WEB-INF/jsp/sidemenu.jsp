@@ -19,7 +19,7 @@
 		</ul>
 		
 		<ul>
-			<li><div class="logged_in_as">Eingeloggt: Fabianasasa Langeassas</div></li>
+			<li><div class="logged_in_as">Eingeloggt: Fabian Lange</div></li>
 		</ul>
 	</div>
 </body>
