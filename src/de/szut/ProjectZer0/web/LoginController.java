@@ -1,5 +1,7 @@
 package de.szut.ProjectZer0.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

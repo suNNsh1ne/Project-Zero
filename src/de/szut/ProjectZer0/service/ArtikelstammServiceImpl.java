@@ -11,7 +11,8 @@ import de.szut.ProjectZer0.model.Artikelstamm;
 
 @Service("ArtikelstammService")
 @Transactional
-public class ArtikelstammServiceImpl {
+public class ArtikelstammServiceImpl implements ArtikelstammService{
+	
     @Autowired
     private ArtikelstammDAO dao;
 
@@ -24,6 +25,10 @@ public class ArtikelstammServiceImpl {
     	Artikelstamm entity = dao.findById(Artikelstamm.getArtikelstammId());
         if(entity!=null){
         	entity.setBezeichnung((Artikelstamm.getBezeichnung()));
+        	entity.setBeschreibung((Artikelstamm.getBeschreibung()));
+        	entity.setKategorie((Artikelstamm.getKategorie()));
+        	entity.setAnzahl((Artikelstamm.getAnzahl()));
+        	entity.setPreis((Artikelstamm.getPreis()));
         }
     }
  
@@ -39,6 +44,11 @@ public class ArtikelstammServiceImpl {
     public Artikelstamm findArtikelstammByBezeichnung(String Bezeichnung) {
     	return dao.findArtikelstammByBezeichnung(Bezeichnung);
     }
+
+	@Override
+	public Artikelstamm findById(int id) {
+		return dao.findById(id);
+	}
 
 
 }

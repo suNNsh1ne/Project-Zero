@@ -39,6 +39,7 @@ public class RegisterController {
  
         model.addAttribute("success", "User " + user.getUsername()+ " registered successfully.");
         return "redirect:userlist";
+
     }
 
 	@RequestMapping("/registerCheck")
