@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="de.szut.ProjectZer0.model.User"%>
 <html>
 <head>
 <c:set var="cp"
@@ -19,7 +20,9 @@
 		</ul>
 		
 		<ul>
-			<li><div class="logged_in_as">Eingeloggt: Fabian Lange</div></li>
+		
+			<li><div class="logged_in_as">Eingeloggt: <%User loggedInUser = (User) request.getSession().getAttribute("user");
+			out.print(loggedInUser.getUsername());%></div></li>
 		</ul>
 	</div>
 </body>
