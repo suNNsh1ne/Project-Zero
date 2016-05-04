@@ -10,21 +10,21 @@
 	value="${pageContext.request.servletContext.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${cp}/static/style.css">
-<title>Mitarbeiter Registration Form</title>
+<title>Lager Registration Form</title>
 </head>
 
 <body>
 	<div id="main">
-		<h2>Neuer Mitarbeiter...</h2>
+		<h2>Neues Lager...</h2>
 
-		<form:form method="POST" modelAttribute="Mitarbeiter">
-			<form:input type="hidden" path="MitarbeiterId" id="MitarbeiterId" />
+		<form:form method="POST" modelAttribute="Lager">
+			<form:input type="hidden" path="LagerId" id="LagerId" />
 			<table>
 				<tr>
-					<td><label for="Name"></label></td>
-					<td><form:input path="Name" placeholder="Name"
-							id="Name" /></td>
-					<td><form:errors path="Name" class="error" /></td>
+					<td><label for="name"></label></td>
+					<td><form:input path="name" placeholder="Name"
+							id="name" /></td>
+					<td><form:errors path="name" class="error" /></td>
 				</tr>
 
 				<tr>
