@@ -28,6 +28,27 @@
 				</tr>
 
 				<tr>
+					<td><label for="Ort"></label></td>
+					<td><form:input path="Ort" placeholder="Ort"
+							id="Ort" /></td>
+					<td><form:errors path="Ort" class="error" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="Kapazität"></label></td>
+					<td><form:input path="Kapazität" placeholder="Kapazität"
+							id="Kapazität" /></td>
+					<td><form:errors path="Kapazität" class="error" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="Auslastung"></label></td>
+					<td><form:input path="Auslastung" placeholder="Auslastung"
+							id="Auslastung" /></td>
+					<td><form:errors path="Auslastung" class="error" /></td>
+				</tr>
+
+				<tr>
 					<td colspan="3"><c:choose>
 							<c:when test="${edit}">
 								<input type="submit" value="Update" class="button" />
