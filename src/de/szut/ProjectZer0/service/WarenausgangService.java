@@ -1,5 +1,10 @@
 package de.szut.ProjectZer0.service;
 
-public interface WarenausgangService {
+import java.util.List;
 
+import de.szut.ProjectZer0.model.Warenausgang;
+
+public interface WarenausgangService {
+	Warenausgang findById(int id);
+    List<Warenausgang> getAllBestandsartikel();
 }

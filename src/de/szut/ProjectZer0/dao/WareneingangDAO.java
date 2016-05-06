@@ -1,5 +1,9 @@
 package de.szut.ProjectZer0.dao;
 
-public interface WareneingangDAO {
+import java.util.List;
+import de.szut.ProjectZer0.model.Wareneingang;
 
+public interface WareneingangDAO {
+	Wareneingang findById(int id);
+    List<Wareneingang> getAllBestandsartikel();
 }

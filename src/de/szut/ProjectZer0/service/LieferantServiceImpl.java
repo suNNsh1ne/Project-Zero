@@ -25,6 +25,9 @@ public class LieferantServiceImpl implements LieferantService {
     	Lieferant entity = dao.findById(Lieferant.getLieferantId());
         if(entity!=null){
         	entity.setAnsprechpartner(Lieferant.getAnsprechpartner());
+        	entity.setAdresse(Lieferant.getAdresse());
+        	entity.setArtikelstämme(Lieferant.getArtikelstämme());
+        	entity.setWareneingang(Lieferant.getWareneingang());
         }
     }
  

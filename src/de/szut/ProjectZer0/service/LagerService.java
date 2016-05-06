@@ -1,5 +1,14 @@
 package de.szut.ProjectZer0.service;
 
-public interface LagerService {
+import java.util.List;
 
+import de.szut.ProjectZer0.model.Lager;
+
+public interface LagerService {
+	Lager findById(int id);
+    void saveLager(Lager lager);  
+    void deleteLagerByName(String name);
+    List<Lager> getAllLager();
+    Lager findLagerByName(String name);
+     
 }

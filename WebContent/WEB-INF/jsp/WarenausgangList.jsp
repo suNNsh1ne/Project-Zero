@@ -7,7 +7,7 @@
 	value="${pageContext.request.servletContext.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${cp}/static/style.css">
-<title>Lieferant</title>
+<title>Warenausgang</title>
 
 <style>
 tr:first-child {
@@ -22,24 +22,28 @@ tr:first-child {
 <body>
 	<%@ include file="sidemenu.jsp"%>
 	<div class="content">
-		<h2>Lieferant</h2>
+		<h2>Warenausgang</h2>
 		<table class="table table-hover">
 			<tr>
 				<td>ID</td>
-				<td>Ansprechpartner</td>
-				<td>Addresse</td>
+				<td>Lieferanten</td>
+				<td>Bestandsartikel</td>
+				<td>Anzahl</td>
+				<td>Ausgangs_Datum</td>
 				<td></td>
 			</tr>
-			<c:forEach items="${Lieferant}" var="value">
+			<c:forEach items="${Warenausgang}" var="value">
 				<tr>
-					<td>${value.lieferantenId}</td>
-					<td>${value.Ansprechpartner}</td>
-					<td>${value.Addresse}</td>
+					<td>${value.warenausgangId}</td>
+					<td>${value.Lieferanten}</td>
+					<td>${value.Bestandsartikel}</td>
+					<td>${value.Anzahl}</td>
+					<td>${value.Ausgangs_Datum}</td>
 				</tr>
 			</c:forEach>
 		</table>
 		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
-			<button class="button">Lieferant hinzufügen</button>
+			<button class="button">Mitarbeiter hinzufügen</button>
 		</a>
 	</div>
 </body>

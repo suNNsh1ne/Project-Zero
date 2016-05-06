@@ -20,7 +20,7 @@ public class Bestandsartikel {
 	@Id
 	@GeneratedValue
 	@Column(name = "BESTANDSARTIKEL_ID")
-	private double BestandsartikelId;
+	private int BestandsartikelId;
 
 	@Column(name = "ARTIKELSTAMM")
 	private Artikelstamm Artikelstamm;
@@ -44,11 +44,11 @@ public class Bestandsartikel {
 	public Bestandsartikel() {
 	}
 
-	public double getBestandsartikelId() {
+	public int getBestandsartikelId() {
 		return BestandsartikelId;
 	}
 
-	public void setBestandsartikelId(double bestandsartikelId) {
+	public void setBestandsartikelId(int bestandsartikelId) {
 		this.BestandsartikelId = BestandsartikelId;
 	}
 

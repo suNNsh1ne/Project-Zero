@@ -38,27 +38,12 @@ public class RegisterController {
         userService.saveUser(user);
  
         model.addAttribute("success", "User " + user.getUsername()+ " registered successfully.");
-        return "success";
+        return "redirect:userlist";
+
     }
-	
-	@RequestMapping(value = {"/list"}, method = RequestMethod.GET)
-	public String listAllUser(HttpServletRequest req, ModelMap model)
-	{
-		if(req.getSession().getAttribute("user") != null)
-		{
-			List<User> user = userService.getAllUser();
-			model.addAttribute("User", user);
-			return "userList";
-		}
-		else
-		{
-			return "error";
-		}
-	}
 
 	@RequestMapping("/registerCheck")
 	public String registercheck() {
-		System.out.println("test");
 		return "redirect:login";
 	}
 

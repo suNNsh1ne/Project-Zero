@@ -26,7 +26,7 @@ public class MitarbeiterServiceImpl implements MitarbeiterService {
     	Mitarbeiter entity = dao.findById(Mitarbeiter.getMitarbeiterId());
         if(entity!=null){
         	entity.setName(Mitarbeiter.getName());
-
+			entity.setLager(Mitarbeiter.getLager());
         }
     }
  
