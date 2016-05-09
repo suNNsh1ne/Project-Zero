@@ -1,16 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="de.szut.ProjectZer0.model.User"%>
-<html>
-<head>
-<c:set var="cp"
-	value="${pageContext.request.servletContext.contextPath}" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${cp}/static/sidemenu.css">
-<title>JSP Page</title>
-</head>
-<body>
+
+<c:set var="cp"	value="${pageContext.request.servletContext.contextPath}" />
 	<div id='cssmenu'>
 		<ul>
 			<li><a href="<c:url value='/home' />"><span><img src="<c:url value="static/images/home-3-48.png"/>"/></span></a></li>
@@ -20,10 +11,7 @@
 		</ul>
 		
 		<ul>
-		
-			<li><div class="logged_in_as">Eingeloggt: <%User loggedInUser = (User) request.getSession().getAttribute("user");
+			<li><div class="logged_in_as">Eingeloggt: <%User loggedInUser = (User)request.getSession().getAttribute("user");
 			out.print(loggedInUser.getUsername());%></div></li>
 		</ul>
 	</div>
-</body>
-</html>

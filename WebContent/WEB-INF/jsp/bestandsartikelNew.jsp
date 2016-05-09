@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -10,21 +11,28 @@
 	value="${pageContext.request.servletContext.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${cp}/static/style.css">
-<title>Mitarbeiter Registration Form</title>
+<title>Bestandsartikel Registration Form</title>
 </head>
 
 <body>
 	<div id="main">
-		<h2>Neuer Mitarbeiter...</h2>
+		<h2>Neuer Bestandsartikel...</h2>
 
-		<form:form method="POST" modelAttribute="Mitarbeiter">
-			<form:input type="hidden" path="MitarbeiterId" id="MitarbeiterId" />
+		<form:form method="POST" modelAttribute="Bestandsartikel">
+			<form:input type="hidden" path="BestandsartikelId" id="BestandsartikelId" />
 			<table>
 				<tr>
-					<td><label for="Name"></label></td>
-					<td><form:input path="Name" placeholder="Name"
-							id="Name" /></td>
-					<td><form:errors path="Name" class="error" /></td>
+					<td><label for="Artikelstamm"></label></td>
+					<td><form:input path="Artikelstamm" placeholder="Artikelstamm"
+							id="Artikelstamm" /></td>
+					<td><form:errors path="Artikelstamm" class="error" /></td>
+				</tr>
+
+				<tr>
+					<td><label for="Anzahl"></label></td>
+					<td><form:password path="Anzahl"
+							placeholder="Anzahl" id="Anzahl" /></td>
+					<td><form:errors path="Anzahl" class="error" /></td>
 				</tr>
 
 				<tr>
@@ -35,8 +43,8 @@
 							<c:otherwise>
 								<input type="submit" value="Register" class="button" />
 							</c:otherwise>
-						</c:choose> <a href="<c:url value='/mitarbeiterList' />"><button
-								class="button">Mitarbeiterlist</button></a></td>
+						</c:choose> <a href="<c:url value='/menu/userList' />"><button
+								class="button">Accountlist</button></a></td>
 				</tr>
 			</table>
 		</form:form>
