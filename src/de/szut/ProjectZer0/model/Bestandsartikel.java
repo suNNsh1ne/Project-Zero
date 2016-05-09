@@ -49,7 +49,7 @@ public class Bestandsartikel {
 	}
 
 	public void setBestandsartikelId(int bestandsartikelId) {
-		this.BestandsartikelId = BestandsartikelId;
+		this.BestandsartikelId = bestandsartikelId;
 	}
 
 	public Artikelstamm getArtikelstamm() {
