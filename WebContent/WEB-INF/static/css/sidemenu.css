@@ -115,11 +115,11 @@
 }
 
 #cssmenu>ul>li.active a {
-	background: #1b9bff;
+	background: #4aa3df;
 }
 
 #cssmenu>ul>li a:hover, #cssmenu>ul>li:hover a {
-	background: #1b9bff;
+	background: #4aa3df;
 }
 
 #cssmenu li {
@@ -129,10 +129,10 @@
 .logged_in_as {
 	margin: 0px 0px 0px 5px;
 	line-height: 20px;
+	margin: 10px 0px 10px 10px;
 	font-size: 15px;
 	font-weight: bold;
 	font-family: 'Raleway', sans-serif;
-	text-shadow: 2px 2px #2980b9;
 	color: white;
 	text-align: left;
 }
