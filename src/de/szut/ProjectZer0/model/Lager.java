@@ -34,6 +34,9 @@ public class Lager {
 	@Column(name ="AUSLASTUNG")
 	private int Auslastung;
 	
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lagerBestand",cascade = CascadeType.ALL)
+	private Set<Bestandsartikel> bestandsartikel;
+	
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lagerZuweisung",cascade = CascadeType.ALL)
 	private Set<Mitarbeiter> mitarbeiter;
 	
@@ -44,8 +47,7 @@ public class Lager {
 	public void setMitarbeiter(Set<Mitarbeiter> mitarbeiter) {
 		this.mitarbeiter = mitarbeiter;
 	}
-
-	public Lager() {}
+	
 
 	public int getLagerID() {
 		return LagerID;

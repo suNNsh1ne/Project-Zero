@@ -1,11 +1,13 @@
 package de.szut.ProjectZer0.model;
 
 	import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 	import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 	import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -28,9 +30,50 @@ import javax.persistence.Table;
 		@Column(name = "ANSPRECHPARTNER")
 		private String Ansprechpartner;
 		
+		@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lieferantZuweisung",cascade = CascadeType.ALL)
+		private Set<Artikelstamm> artikelstaemme;
+		
+		@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+		@JoinColumn(name = "WARENEINGANG_ID", nullable = false)
+		private Wareneingang wareneingang;
+		
+		@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+		@JoinColumn(name = "WARENAUSGANG_ID", nullable = false)
+		private Warenausgang warenausgang;
+		
+		public Wareneingang getWareneingang() {
+			return wareneingang;
+		}
 
-		@Id
-		@GeneratedValue
+		public void setWareneingang(Wareneingang wareneingang) {
+			this.wareneingang = wareneingang;
+		}
+		
+		public int getLieferantenId() {
+			return lieferantenId;
+		}
+
+		public void setLieferantenId(int lieferantenId) {
+			this.lieferantenId = lieferantenId;
+		}
+
+		public Warenausgang getWarenausgang() {
+			return warenausgang;
+		}
+
+		public void setWarenausgang(Warenausgang warenausgang) {
+			this.warenausgang = warenausgang;
+		}
+
+
+		public Set<Artikelstamm> getArtikelstaemme() {
+			return artikelstaemme;
+		}
+
+		public void setArtikelstaemme(Set<Artikelstamm> artikelstaemme) {
+			this.artikelstaemme = artikelstaemme;
+		}
+
 		public int getLieferantId() {
 			return lieferantenId;
 		}
