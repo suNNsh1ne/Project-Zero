@@ -38,7 +38,7 @@ tr:first-child {
 				</tr>
 			</c:forEach>
 		</table>
-		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
+		<br /> <a href="<c:url value='/mitarbeiterNew' />">
 			<button class="button">Mitarbeiter hinzufügen</button>
 		</a>
 	</div>
