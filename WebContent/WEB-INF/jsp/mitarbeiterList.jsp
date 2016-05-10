@@ -20,7 +20,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
+		<br /> <a href="<c:url value='/mitarbeiterNew' />">
 			<button class="button">Mitarbeiter hinzufügen</button>
 		</a>
 		<script type="text/javascript">				

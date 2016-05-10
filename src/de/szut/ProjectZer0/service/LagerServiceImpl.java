@@ -26,8 +26,6 @@ public class LagerServiceImpl implements LagerService {
         if(entity!=null){
         	entity.setName(Lager.getName());
         	entity.setAuslastung(Lager.getAuslastung());
-        	entity.setBestandsartikel(Lager.getBestandsartikel());
-        	entity.setMitarbeiter(Lager.getMitarbeiter());
         	entity.setOrt(Lager.getOrt());
         	entity.setKapazität(Lager.getKapazität());
         }
