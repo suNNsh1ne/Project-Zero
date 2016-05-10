@@ -20,7 +20,7 @@
 
 #cssmenu ul .fa {
 	font-size: 50px;
-	line-height: 70px;
+	line-height: 60px;
 	transition: all 350ms ease;
 	-moz-transition: all 350ms ease;
 	-webkit-transition: all 350ms ease;
@@ -28,8 +28,8 @@
 }
 
 	#cssmenu ul li a:hover .fa {
-		font-size: 65px;
-		line-height: 70px;
+		font-size: 55px;
+		line-height: 60px;
 		transition: all 350ms ease;
 		-moz-transition: all 350ms ease;
 		-webkit-transition: all 350ms ease;

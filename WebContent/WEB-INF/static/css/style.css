@@ -7,7 +7,10 @@
 
 	/* Import the Font Aweseome CSS icons */
 	@import 'font-awesome.css';
-
+	
+/* *********************** */
+/* Standard CSS-Selektoren */
+/* *********************** */
 
 body {
 	background: #4aa3df;
@@ -15,7 +18,41 @@ body {
 	margin: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #E8534F;
+}
+
+h1 {
+	margin: 0px;
+	line-height: 40px;
+	font-size: 35px;
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+	text-shadow: 2px 2px #2980b9;
+	color: white;
+	text-align: left;
+}
+
+h2 {
+	margin: 0px;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+	text-shadow: 2px 2px #2980b9;
+	color: white;
+	text-align: left;
+}
+
+
+/* ************* */
 /* Tooltip cloud */
+/* ************* */
+
 #tooltip_cloud {
 	display: none;
 	position: absolute;
@@ -65,27 +102,11 @@ body {
 			border-left: 8px solid transparent;
 		}
 
-h1 {
-	margin: 0px;
-	line-height: 40px;
-	font-size: 35px;
-	font-weight: bold;
-	font-family: 'Raleway', sans-serif;
-	text-shadow: 2px 2px #2980b9;
-	color: white;
-	text-align: left;
-}
 
-h2 {
-	margin: 0px;
-	line-height: 40px;
-	font-size: 20px;
-	font-weight: bold;
-	font-family: 'Raleway', sans-serif;
-	text-shadow: 2px 2px #2980b9;
-	color: white;
-	text-align: left;
-}
+
+/* ************* */
+/* Button-Design */
+/* ************* */
 
 .button {
 	position: relative;
@@ -115,6 +136,10 @@ h2 {
 box-shadow:         1px 1px 7px 0px rgba(50, 50, 50, 0.62);
 }
 
+/* **************** */
+/* ID's and Classes */
+/* **************** */
+
 #registerSuccess {
 	width:30%;
 }
@@ -134,12 +159,8 @@ box-shadow:         1px 1px 7px 0px rgba(50, 50, 50, 0.62);
 	display: inline-block;
 }
 
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	color: #E8534F;
+.error {
+	color: #ff0000;
 }
 
 .content {
@@ -149,6 +170,10 @@ a:hover {
 	position: absolute;
 	left: 130px;
 }
+
+/* *********************** */
+/* Input + Password Fields */
+/* *********************** */
 
 input[type="text"], input[type="password"] {
 	background: #70B9E9;
@@ -163,6 +188,10 @@ input[type="text"], input[type="password"] {
 	border-radius: 5px;
 	border: 0px;
 }
+
+/* ***** */
+/* Table */
+/* ***** */
 
 .table {
 	background: #70B9E9;
@@ -217,9 +246,9 @@ input[type="text"], input[type="password"] {
 	color: #E8534F;
 }
 
-.error {
-	color: #ff0000;
-}
+/* *********** */
+/* Menu Toggle */
+/* *********** */
 
 .menu_toggle {
 	display: inline-block;
