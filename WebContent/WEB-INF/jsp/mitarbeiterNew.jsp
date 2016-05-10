@@ -1,20 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<html>
-
-<head>
-<c:set var="cp"
-	value="${pageContext.request.servletContext.contextPath}" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${cp}/static/style.css">
-<title>Mitarbeiter Registration Form</title>
-</head>
-
-<body>
-	<div id="main">
+<%@ include file="header.jsp"%>
 		<h2>Neuer Mitarbeiter...</h2>
 
 		<form:form method="POST" modelAttribute="Mitarbeiter">
@@ -41,6 +25,4 @@
 			</table>
 		</form:form>
 		<br /> <br />
-	</div>
-</body>
-</html>
+<%@ include file="footer.jsp"%>
