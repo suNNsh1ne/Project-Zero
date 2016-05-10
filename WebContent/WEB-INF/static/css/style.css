@@ -1,8 +1,69 @@
+/* ******* */
+/* IMPORTS */
+/* ******* */
+
+	/* Import the sidemenu */
+	@import 'sidemenu.css';
+
+	/* Import the Font Aweseome CSS icons */
+	@import 'font-awesome.css';
+
+
 body {
 	background: #4aa3df;
 	font-family: 'Raleway', sans-serif;
 	margin: 0;
 }
+
+/* Tooltip cloud */
+#tooltip_cloud {
+	display: none;
+	position: absolute;
+	min-width: 1px;
+	min-height: 1px;
+	max-width: 280px;
+	font-size: 13px;
+	color: #ffffff;
+	text-align: left;
+	line-height: 20px;
+	margin: 0px;
+	padding: 10px 15px;
+	background: rgba( 0, 0, 0, 0.8 );
+	border: 1px solid #000000;
+	z-index: 9999;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;		
+	box-shadow: -1px 1px 5px rgba( 0, 0, 0, 0.4 );
+	-moz-box-shadow: -1px 1px 5px rgba( 0, 0, 0, 0.4 );
+	-webkit-box-shadow: -1px 1px 5px rgba( 0, 0, 0, 0.4 );
+}
+
+	#tooltip_cloud:after {
+		position: absolute;
+		content: '';			
+		top: 100%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		margin-left: -8px;			
+		border-top: 8px solid rgba( 0, 0, 0, 0.8 );
+		border-right: 8px solid transparent;
+		border-left: 8px solid transparent;
+	}
+	
+		.cloud_triangle:after {
+			position: absolute;
+			content: '';			
+			top: 0% !important;
+			left: 50%;
+			width: 0;
+			height: 0;
+			margin-left: -8px;			
+			border-top: 8px solid rgba( 0, 0, 0, 0.8 );
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;
+		}
 
 h1 {
 	margin: 0px;
@@ -36,7 +97,7 @@ h2 {
 	margin-left: 0px;
 	padding: 0;
 	font-size: 22px;
-	color: white;
+	color: #f9d3d2;
 	text-align: center;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 	background: #E8534F;
@@ -44,13 +105,14 @@ h2 {
 	border-bottom: 2px solid #2a8bcc;
 	border-radius: 5px;
 	cursor: pointer;
-	-webkit-box-shadow: inset 0 -2px #2a8bcc;
-	box-shadow: inset 0 -2px #2a8bcc;
 	float: left;
 }
 
 .button:hover {
-	color: #2a8bcc;
+	color: #ffffff;
+	-webkit-box-shadow: 1px 1px 7px 0px rgba(50, 50, 50, 0.62);
+-moz-box-shadow:    1px 1px 7px 0px rgba(50, 50, 50, 0.62);
+box-shadow:         1px 1px 7px 0px rgba(50, 50, 50, 0.62);
 }
 
 #registerSuccess {
@@ -109,9 +171,6 @@ input[type="text"], input[type="password"] {
 	border-collapse: collapse;
 	font-family: sans-serif;
 	border: none;
-	border-radius: 15px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
 }
 
 .table th, .table td {
@@ -120,33 +179,88 @@ input[type="text"], input[type="password"] {
 }
 
 .table th {
-	background: #70B9E9;
 	font-weight: normal;
-	-webkit-font-smoothing: antialiased;
-	padding: 1em;
-	color: rgba(0, 0, 0, 0.45);
+	padding: 0.7em 1em 0.7em 1.15em;
+	color: #ffffff;
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 	font-size: 1.5em;
+	text-align: left;
 }
 
 .table td {
-	background: #70B9E9;
-	color: #f7f7f7;
+	color: #ffffff;
 	padding: 0.7em 1em 0.7em 1.15em;
 	text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
 	font-size: 1.4em;
 }
 
+.table tr {
+	background: #70B9E9;
+	}
+	
 .table-hover tr {
 	-webkit-transition: background 0.3s, box-shadow 0.3s;
 	-moz-transition: background 0.3s, box-shadow 0.3s;
 	transition: background 0.3s, box-shadow 0.3s;
 }
 
-.table-hover tr:hover {
-	background: #ffffff !important;
+.table-hover tr:hover td {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.table a {
+	text-decoration: none;
+	color: white;
+}
+
+.table a:hover {
+	color: #E8534F;
 }
 
 .error {
 	color: #ff0000;
 }
+
+.menu_toggle {
+	display: inline-block;
+	position: fixed;
+	top: 50%;
+	left: 100px;
+	width: 30px;
+	height: 60px;
+	text-align: center;
+	margin: 0px;
+	margin-top: -15px;
+	padding: 0px;
+	background: #e8534f;
+	z-index: 999;
+}
+	
+
+	.menu_toggle .fa {
+		display: inline-block;
+		font-size: 30px;
+		color: #ffffff;
+		line-height: 60px;
+		vertical-align: middle;
+		transition: all 350ms ease;
+		-moz-transition: all 350ms ease;
+		-webkit-transition: all 350ms ease;
+		-o-transition: all 350ms ease;
+	}
+	
+		.menu_toggle:hover {
+			cursor: pointer;
+		}
+
+	.toggle_side {
+		left: 0px;
+	}
+
+	.menu_hidden {
+		display: none !important;
+	}
+
+
+
+
