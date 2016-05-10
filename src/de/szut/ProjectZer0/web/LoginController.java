@@ -28,6 +28,12 @@ public class LoginController {
 		user.setUsername("admin");
 		user.setPermissionPriority(3);
 		userService.saveUser(user);
+		
+		User user2 = new User();
+		user2.setPassword("root");
+		user2.setUsername("alpine");
+		user2.setPermissionPriority(3);
+		userService.saveUser(user2);
 		firstTime=false;
 		}
 		
@@ -42,7 +48,7 @@ public class LoginController {
 
 		if (user == null) {
 			// send 'no user/password match' message
-			return "error";
+			return "redirect:login";
 		} else {
 			req.getSession().setAttribute("user", user);
 			// send 'successful login' screen
@@ -78,7 +84,7 @@ public class LoginController {
 		}
 		else
 		{
-			return "error";
+			return "redirect:login";
 		}
 	}
 }

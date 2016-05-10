@@ -1,7 +1,17 @@
 <%@ include file="header.jsp"%>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Source : http://www.jqueryscript.net/table/Simple-jQuery-Plugin-For-Html-Table-Live-Search.html -->
+
+<script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
+<script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
+
+
+
 <h1>Benutzerliste</h1>
 
-<table class="table table-hover">
+
+<table class="table table-hover search-table">
 	<tr>
 		<th>Name</th>
 		<th>Password</th>

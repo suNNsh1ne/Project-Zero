@@ -50,7 +50,7 @@ public class MenuController {
 		}
 		else
 		{
-			return "error";
+			return "redirect:login";
 		}
 	}
 	
