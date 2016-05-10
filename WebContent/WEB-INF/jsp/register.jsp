@@ -9,7 +9,8 @@
 <c:set var="cp"
 	value="${pageContext.request.servletContext.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${cp}/static/style.css">
+<link rel="stylesheet" href="${cp}/static/css/style.css">
+<link rel="stylesheet" href="${cp}/static/css/sidemenu.css">
 <title>Account Registration Form</title>
 
 <style>

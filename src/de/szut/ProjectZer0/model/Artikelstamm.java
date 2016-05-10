@@ -3,11 +3,16 @@ package de.szut.ProjectZer0.model;
 import java.sql.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 	import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 	import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 	@Entity
@@ -37,11 +42,33 @@ import javax.persistence.Table;
 		@Column(name ="PREIS")
 		private Date Preis;
 		
-		@ManyToMany(mappedBy="Artikelstämme")
-		@Column(name ="LIEFERANTEN")
-		private Set<Lieferant> Lieferanten;
+		@OneToMany(fetch = FetchType.EAGER, mappedBy = "artikelstamm",cascade = CascadeType.ALL)
+		private Set<Bestandsartikel> Bestandsartikel;
 		
-		public Artikelstamm() {}
+		@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+		@JoinTable(name = "lieferantZuweisung", joinColumns = { 
+				@JoinColumn(name = "ARTIKELSTAMM_ID", nullable = false, updatable = true)},
+				inverseJoinColumns = {@JoinColumn(name = "LIEFERANTEN_ID", nullable = false, updatable = true)
+		})
+		private Set<Lieferant> lieferantZuweisung;
+		
+		
+		
+		public Set<Lieferant> getLieferantZuweisung() {
+			return lieferantZuweisung;
+		}
+
+		public void setLieferantZuweisung(Set<Lieferant> lieferantZuweisung) {
+			this.lieferantZuweisung = lieferantZuweisung;
+		}
+		
+		public Set<Bestandsartikel> getBestandsartikel() {
+			return Bestandsartikel;
+		}
+
+		public void setBestandsartikel(Set<Bestandsartikel> bestandsartikel) {
+			Bestandsartikel = bestandsartikel;
+		}
 
 		public int getArtikelstammId() {
 			return ArtikelstammId;
