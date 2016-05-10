@@ -3,7 +3,7 @@
 
 <table class="table table-hover">
 	<tr>
-		<th>NAME</th>
+		<th>Name</th>
 		<th>Password</th>
 		<th>ID</th>
 		<th>PermissionPriority</th>
