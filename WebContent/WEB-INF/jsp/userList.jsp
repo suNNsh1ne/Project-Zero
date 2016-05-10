@@ -1,38 +1,32 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<c:set var="cp"
-	value="${pageContext.request.servletContext.contextPath}" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${cp}/static/css/style.css">
-<link rel="stylesheet" href="${cp}/static/css/sidemenu.css">
-<title>All Users</title>
+<%@ include file="header.jsp"%>
+<h1>Benutzerliste</h1>
 
-</head>
-<body>
-	<%@ include file="sidemenu.jsp"%>
-	<div class="content">
-		<h1>List of users</h1>
-		<table class="table table-hover">
-			<tr>
-				<td>NAME</td>
-				<td>Password</td>
-				<td>ID</td>
-				<td>PermissionPriority</td>
-				<td></td>
-			</tr>
-			<c:forEach items="${User}" var="user">
-				<tr>
-					<td>${user.username}</td>
-					<td>${user.password}</td>
-					<td>${user.userId}</td>
-					<td>${user.permissionPriority}</td>
-				</tr>
-			</c:forEach>
-		</table>
-		<a href="<c:url value='/register' />"><button class="button">Add New Account</button></a> 
-		<a href="<c:url value='/login' />"><button class="button">Back to Login</button></a>
-	</div>
-</body>
-</html>
+<table class="table table-hover">
+	<tr>
+		<th>NAME</th>
+		<th>Password</th>
+		<th>ID</th>
+		<th>PermissionPriority</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<c:forEach items="${User}" var="user">
+		<tr>
+			<td>${user.username}</td>
+			<td>${user.password}</td>
+			<td>${user.userId}</td>
+			<td>${user.permissionPriority}</td>
+			<td><a href="<c:url value='/register' />" class="tooltip" data-tooltip="Add"><span class="fa fa-plus-square" aria-hidden="true"></span></a></td>
+					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
+					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
+		</tr>
+	</c:forEach>
+</table>
+<a href="<c:url value='/register' />"><button class="button">Add New Account</button></a> 
+<a href="<c:url value='/login' />"><button class="button">Back to Login</button></a>
+
+<script type="text/javascript">				
+	document.title = 'Benutzerliste';
+</script>
+<%@ include file="footer.jsp"%>
