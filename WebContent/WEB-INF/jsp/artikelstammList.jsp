@@ -35,12 +35,14 @@ tr:first-child {
 			</tr>
 			<c:forEach items="${Artikelstamm}" var="value">
 				<tr>
+				<c:if test="value"></c:if>
 					<td>${value.ArtikelstammId}</td>
 					<td>${value.Bezeichnung}</td>
 					<td>${value.Kategorie}</td>
 					<td>${value.Attribute}</td>
 					<td>${value.Anzahl}</td>
 					<td>${value.Preis}</td>
+					<td>${value.Lieferant.Ansprechpartner)}</td>
 				</tr>
 			</c:forEach>
 		</table>

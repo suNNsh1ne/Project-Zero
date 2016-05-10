@@ -17,6 +17,19 @@ public class LieferantController {
 	@Autowired
 	LieferantService lieferantService;
 	
+	@RequestMapping(value = {"/generateLieferanten"}, method = RequestMethod.GET)
+	public String generateLieferanten(ModelMap model) {
+		Lieferant lieferant1 = new Lieferant();
+		Lieferant lieferant2 = new Lieferant();
+		lieferant1.setAnsprechpartner("Klaus");
+		lieferant1.setAdresse("Delmenhorst");
+		lieferant2.setAnsprechpartner("Peter");
+		lieferant2.setAdresse("Bremen");
+		lieferantService.saveLieferant(lieferant1);
+		lieferantService.saveLieferant(lieferant2);
+        return "home";
+	}
+	
 	@RequestMapping(value = {"/lieferantNew"}, method = RequestMethod.GET)
 	public String lieferantNew(ModelMap model) {
 		Lieferant lieferant = new Lieferant();
