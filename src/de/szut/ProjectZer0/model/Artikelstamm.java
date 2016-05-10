@@ -37,9 +37,7 @@ import javax.persistence.Table;
 		@Column(name ="PREIS")
 		private Date Preis;
 		
-		@ManyToMany(mappedBy="Artikelstämme")
-		@Column(name ="LIEFERANTEN")
-		private Set<Lieferant> Lieferanten;
+
 		
 		public Artikelstamm() {}
 

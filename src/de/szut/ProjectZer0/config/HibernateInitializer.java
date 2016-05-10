@@ -26,6 +26,7 @@ import de.szut.ProjectZer0.model.Wareneingang;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({ "de.szut.ProjetZer0.model" })
+//@ComponentScan({ "de.szut.ProjetZer0.*" })
 @PropertySource(value = { "/WEB-INF/resources/hibernate.properties" })
 public class HibernateInitializer {
     @Autowired
@@ -35,9 +36,9 @@ public class HibernateInitializer {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setAnnotatedClasses(new Class[] { User.class/*, Mitarbeiter.class/*, 
+        sessionFactory.setAnnotatedClasses(new Class[] { User.class, Mitarbeiter.class, 
         		Lager.class, Lieferant.class, Artikelstamm.class, 
-        		Bestandsartikel.class, Wareneingang.class, Warenausgang.class*/});
+        		Bestandsartikel.class, Wareneingang.class, Warenausgang.class});
         //sessionFactory.getConfiguration().addAnnotatedClass(Artikelstamm.class);
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;

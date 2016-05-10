@@ -22,24 +22,9 @@ public class Bestandsartikel {
 	@Column(name = "BESTANDSARTIKEL_ID")
 	private int BestandsartikelId;
 
-	@Column(name = "ARTIKELSTAMM")
-	private Artikelstamm Artikelstamm;
-
 	@Column(name = "ANZAHL")
 	private Integer Anzahl;
 
-	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "Bestand_Lager", joinColumns = {
-			@JoinColumn(name = "BESTANDSARTIKEL_ID") }, inverseJoinColumns = { @JoinColumn(name = "LAGER_ID") })
-	private Set<Lager> Lager;
-
-	@ManyToOne
-	@JoinColumn(name = "WARENEINGANG_ID")
-	private Wareneingang Wareneingang;
-
-	@ManyToOne
-	@JoinColumn(name = "WARENAUSGANG_ID")
-	private Warenausgang Warenausgang;
 
 	public Bestandsartikel() {
 	}
@@ -52,13 +37,6 @@ public class Bestandsartikel {
 		this.BestandsartikelId = bestandsartikelId;
 	}
 
-	public Artikelstamm getArtikelstamm() {
-		return Artikelstamm;
-	}
-
-	public void setArtikelstamm(Artikelstamm artikelstamm) {
-		Artikelstamm = artikelstamm;
-	}
 
 	public Integer getAnzahl() {
 		return Anzahl;
@@ -68,27 +46,4 @@ public class Bestandsartikel {
 		Anzahl = anzahl;
 	}
 
-	public Set<Lager> getLager() {
-		return Lager;
-	}
-
-	public void setLager(Set<Lager> lager) {
-		Lager = lager;
-	}
-
-	public Wareneingang getWareneingang() {
-		return Wareneingang;
-	}
-
-	public void setWareneingang(Wareneingang wareneingang) {
-		Wareneingang = wareneingang;
-	}
-
-	public Warenausgang getWarenausgang() {
-		return Warenausgang;
-	}
-
-	public void setWarenausgang(Warenausgang warenausgang) {
-		Warenausgang = warenausgang;
-	}
 }

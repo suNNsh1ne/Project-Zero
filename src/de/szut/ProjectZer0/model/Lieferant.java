@@ -28,17 +28,6 @@ import javax.persistence.Table;
 		@Column(name = "ANSPRECHPARTNER")
 		private String Ansprechpartner;
 		
-		@ManyToOne
-		@JoinColumn(name = "WARENEINGANG_ID")
-		private Wareneingang Wareneingang;
-		
-		@ManyToMany(cascade = {CascadeType.ALL})
-		//Evtl Table umbenennen
-		@JoinTable(name="LieferArtikel", joinColumns={@JoinColumn(name="LIEFERANTEN_ID")}, inverseJoinColumns={@JoinColumn(name="ARTIKELSTAMM_ID")})
-		//evtl liste von Artikelstämmen
-		private List<Artikelstamm> Artikelstämme;
-		
-		public Lieferant() {}
 
 		@Id
 		@GeneratedValue
@@ -64,22 +53,6 @@ import javax.persistence.Table;
 
 		public void setAnsprechpartner(String ansprechpartner) {
 			Ansprechpartner = ansprechpartner;
-		}
-
-		public Wareneingang getWareneingang() {
-			return Wareneingang;
-		}
-
-		public void setWareneingang(Wareneingang wareneingang) {
-			Wareneingang = wareneingang;
-		}
-
-		public List<Artikelstamm> getArtikelstämme() {
-			return Artikelstämme;
-		}
-
-		public void setArtikelstämme(List<Artikelstamm> artikelstämme) {
-			Artikelstämme = artikelstämme;
 		}
 
 

@@ -2,8 +2,10 @@ package de.szut.ProjectZer0.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,18 +29,22 @@ public class Lager {
 	private String Ort;
 	
 	@Column(name = "KAPAZITÄT")
-	private Integer Kapazität; 
+	private int Kapazität; 
 	
 	@Column(name ="AUSLASTUNG")
-	private Integer Auslastung;
+	private int Auslastung;
 	
-	@ManyToMany(mappedBy="Lager")
-	private Bestandsartikel Bestandsartikel;
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lagerZuweisung",cascade = CascadeType.ALL)
+	private Set<Mitarbeiter> mitarbeiter;
 	
-	@OneToMany(mappedBy="Lager")
-	private Set<Mitarbeiter> Mitarbeiter;
-	
-	
+	public Set<Mitarbeiter> getMitarbeiter() {
+		return mitarbeiter;
+	}
+
+	public void setMitarbeiter(Set<Mitarbeiter> mitarbeiter) {
+		this.mitarbeiter = mitarbeiter;
+	}
+
 	public Lager() {}
 
 	public int getLagerID() {
@@ -65,7 +71,7 @@ public class Lager {
 		Ort = ort;
 	}
 
-	public Integer getKapazität() {
+	public int getKapazität() {
 		return Kapazität;
 	}
 
@@ -73,7 +79,7 @@ public class Lager {
 		Kapazität = integer;
 	}
 
-	public Integer getAuslastung() {
+	public int getAuslastung() {
 		return Auslastung;
 	}
 
@@ -81,20 +87,6 @@ public class Lager {
 		Auslastung = auslastung;
 	}
 
-	public Bestandsartikel getBestandsartikel() {
-		return Bestandsartikel;
-	}
 
-	public void setBestandsartikel(Bestandsartikel bestandsartikel) {
-		Bestandsartikel = bestandsartikel;
-	}
-
-	public Set<Mitarbeiter> getMitarbeiter() {
-		return Mitarbeiter;
-	}
-
-	public void setMitarbeiter(Set<Mitarbeiter> mitarbeiter) {
-		Mitarbeiter = mitarbeiter;
-	}
 
 }

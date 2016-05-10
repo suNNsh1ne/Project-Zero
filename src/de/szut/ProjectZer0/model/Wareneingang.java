@@ -18,37 +18,24 @@ import javax.persistence.Table;
 		@Id
 		@GeneratedValue
 		@Column(name = "WARENEINGANG_ID")
-		private double wareneingangId;
-		
-		@OneToMany(mappedBy="wareneingang")
-		private List<Lieferant> Lieferanten;
-		
-		@OneToMany(mappedBy="wareneingang")
-		private List<Bestandsartikel> Bestandsartikel;
+		private int wareneingangId;
 		
 		@Column(name ="ANZAHL")
-		private Integer Anzahl;
+		private int Anzahl;
 		
 		@Column(name ="EINGANGS_DATUM")
 		private Date Eingangs_Datum;
 		
 		public Wareneingang() {}
 
-		public double getWareneingangId() {
+		public int getWareneingangId() {
 			return wareneingangId;
 		}
 
-		public void setWareneingangId(double wareneingangId) {
+		public void setWareneingangId(int wareneingangId) {
 			this.wareneingangId = wareneingangId;
 		}
 
-		public List<Lieferant> getLieferanten() {
-			return Lieferanten;
-		}
-
-		public void setLieferanten(List<Lieferant> lieferanten) {
-			Lieferanten = lieferanten;
-		}
 
 		public Integer getAnzahl() {
 			return Anzahl;
@@ -64,14 +51,6 @@ import javax.persistence.Table;
 
 		public void setEingangs_Datum(Date eingangs_Datum) {
 			Eingangs_Datum = eingangs_Datum;
-		}
-
-		public List<Bestandsartikel> getBestandsartikel() {
-			return Bestandsartikel;
-		}
-
-		public void setBestandsartikel(List<Bestandsartikel> bestandsartikel) {
-			Bestandsartikel = bestandsartikel;
 		}
 
 

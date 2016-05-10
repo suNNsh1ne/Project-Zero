@@ -14,7 +14,7 @@ package de.szut.ProjectZer0.model;
 		@Id
 		@GeneratedValue
 		@Column(name = "WARENAUSGANG_ID")
-		private double warenausgangId;
+		private int warenausgangId;
 		
 		@Column(name = "LIEFERADRESSE")
 		private String Lieferadresse;
@@ -30,7 +30,7 @@ package de.szut.ProjectZer0.model;
 		
 		public Warenausgang() {}
 
-		public double getWarenausgangId() {
+		public int getWarenausgangId() {
 			return warenausgangId;
 		}
 
