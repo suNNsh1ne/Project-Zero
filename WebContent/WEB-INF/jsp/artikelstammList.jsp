@@ -31,7 +31,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<br /> <a href="<c:url value='/menu/artikelstammNew' />">
+		<br /> <a href="<c:url value='/artikelstammNew' />">
 			<button class="button">Artikel hinzufügen</button>
 		</a>
 		

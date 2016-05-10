@@ -39,17 +39,10 @@ public class LagerController {
     }
 	
 	@RequestMapping(value = {"/lagerList"}, method = RequestMethod.GET)
-	public String listAllLager(HttpServletRequest req, ModelMap model)
+	public String listAllLager(ModelMap model)
 	{
-		if(req.getSession().getAttribute("lager") != null)
-		{
-			List<Lager> lager = lagerService.getAllLager();
-			model.addAttribute("Lager", lager);
-			return "lagerList";
-		}
-		else
-		{
-			return "error";
-		}
+		List<Lager> lager = lagerService.getAllLager();
+		model.addAttribute("Lager", lager);
+		return "lagerList";
 	}
 }

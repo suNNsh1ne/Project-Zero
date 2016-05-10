@@ -14,21 +14,14 @@ import de.szut.ProjectZer0.service.WarenausgangService;
 
 @Controller
 public class WarenausgangController {
-	//@Autowired
+	@Autowired
 	WarenausgangService warenausgangService;
 	
 	@RequestMapping(value = {"/warenausgangList"}, method = RequestMethod.GET)
-	public String listAllWarenausgang(HttpServletRequest req, ModelMap model)
+	public String listAllWarenausgang(ModelMap model)
 	{
-		if(req.getSession().getAttribute("warenausgang") != null)
-		{
-			List<Warenausgang> warenausgang = warenausgangService.getAllBestandsartikel();
-			model.addAttribute("Warenausgang", warenausgang);
-			return "warenausgangList";
-		}
-		else
-		{
-			return "error";
-		}
+		List<Warenausgang> warenausgang = warenausgangService.getAllBestandsartikel();
+		model.addAttribute("Warenausgang", warenausgang);
+		return "warenausgangList";
 	}
 }

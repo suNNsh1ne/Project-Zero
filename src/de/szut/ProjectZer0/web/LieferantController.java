@@ -53,17 +53,10 @@ public class LieferantController {
     }
 	
 	@RequestMapping(value = {"/lieferantList"}, method = RequestMethod.GET)
-	public String listAllLieferant(HttpServletRequest req, ModelMap model)
+	public String listAllLieferant(ModelMap model)
 	{
-		if(req.getSession().getAttribute("lieferant") != null)
-		{
-			List<Lieferant> lieferant = lieferantService.getAllLieferant();
-			model.addAttribute("Lieferant", lieferant);
-			return "lieferantList";
-		}
-		else
-		{
-			return "error";
-		}
+		List<Lieferant> lieferant = lieferantService.getAllLieferant();
+		model.addAttribute("Lieferant", lieferant);
+		return "lieferantList";
 	}
 }

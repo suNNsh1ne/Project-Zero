@@ -18,17 +18,10 @@ public class WareneingangController {
 	WareneingangService wareneingangService;
 	
 	@RequestMapping(value = {"/wareneingangList"}, method = RequestMethod.GET)
-	public String listAllWareneingang(HttpServletRequest req, ModelMap model)
+	public String listAllWareneingang(ModelMap model)
 	{
-		if(req.getSession().getAttribute("wareneingang") != null)
-		{
-			List<Wareneingang> wareneingang = wareneingangService.getAllBestandsartikel();
-			model.addAttribute("Wareneingang", wareneingang);
-			return "wareneingangList";
-		}
-		else
-		{
-			return "error";
-		}
+		List<Wareneingang> wareneingang = wareneingangService.getAllBestandsartikel();
+		model.addAttribute("Wareneingang", wareneingang);
+		return "wareneingangList";
 	}
 }
