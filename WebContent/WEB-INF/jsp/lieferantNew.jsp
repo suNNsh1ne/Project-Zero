@@ -1,20 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<!DOCTYPE html>
 <html>
-
 <head>
 <c:set var="cp"
 	value="${pageContext.request.servletContext.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${cp}/static/style.css">
-<title>Lieferant Registration Form</title>
+<link rel="stylesheet" href="${cp}/static/css/style.css">
+<script type="text/javascript" src="${cp}/static/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="${cp}/static/js/custom.js"></script>
+<title>Lieferanten registrieren</title>
 </head>
-
 <body>
-	<div id="main">
+<div id="tooltip_cloud"></div>
+	<%@ include file="sidemenu.jsp"%>
+	<div class="content">
 		<h2>Neuer Lieferant...</h2>
 
 		<form:form method="POST" modelAttribute="Lieferant">
