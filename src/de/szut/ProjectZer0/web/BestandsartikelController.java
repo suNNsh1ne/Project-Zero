@@ -39,17 +39,10 @@ public class BestandsartikelController {
     }
 	
 	@RequestMapping(value = {"/bestandsartikelList"}, method = RequestMethod.GET)
-	public String listAllBestandsartikel(HttpServletRequest req, ModelMap model)
+	public String listAllBestandsartikel(ModelMap model)
 	{
-		if(req.getSession().getAttribute("bestandsartikel") != null)
-		{
-			List<Bestandsartikel> bestandsartikel = bestandsartikelService.getAllBestandsartikel();
-			model.addAttribute("Bestandsartikel", bestandsartikel);
-			return "bestandsartikelList";
-		}
-		else
-		{
-			return "error";
-		}
+		List<Bestandsartikel> bestandsartikel = bestandsartikelService.getAllBestandsartikel();
+		model.addAttribute("Bestandsartikel", bestandsartikel);
+		return "bestandsartikelList";
 	}
 }

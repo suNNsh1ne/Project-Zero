@@ -28,7 +28,7 @@ import javax.persistence.Table;
 		private String Bestandsartikel;
 		
 		@Column(name ="ANZAHL")
-		private Integer Anzahl;
+		private int Anzahl;
 		
 		@Column(name ="AUSGANGS_DATUM")
 		private Date Ausgangs_Datum;
@@ -59,10 +59,6 @@ import javax.persistence.Table;
 			return warenausgangId;
 		}
 
-		public void setWarenausgangId(Integer warenausgangId) {
-			this.warenausgangId = warenausgangId;
-		}
-
 		public String getLieferadresse() {
 			return Lieferadresse;
 		}
@@ -79,11 +75,11 @@ import javax.persistence.Table;
 			Bestandsartikel = bestandsartikel;
 		}
 
-		public Integer getAnzahl() {
+		public int getAnzahl() {
 			return Anzahl;
 		}
 
-		public void setAnzahl(Integer anzahl) {
+		public void setAnzahl(int anzahl) {
 			Anzahl = anzahl;
 		}
 

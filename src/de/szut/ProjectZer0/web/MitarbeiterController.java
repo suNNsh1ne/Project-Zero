@@ -40,17 +40,10 @@ public class MitarbeiterController {
     }
 	
 	@RequestMapping(value = {"/mitarbeiterList"}, method = RequestMethod.GET)
-	public String listAllMitarbeiter(HttpServletRequest req, ModelMap model)
+	public String listAllMitarbeiter(ModelMap model)
 	{
-		if(req.getSession().getAttribute("mitarbeiter") != null)
-		{
-			List<Mitarbeiter> mitarbeiter = mitarbeiterService.getAllMitarbeiter();
-			model.addAttribute("Mitarbeiter", mitarbeiter);
-			return "mitarbeiterList";
-		}
-		else
-		{
-			return "error";
-		}
+		List<Mitarbeiter> mitarbeiter = mitarbeiterService.getAllMitarbeiter();
+		model.addAttribute("Mitarbeiter", mitarbeiter);
+		return "mitarbeiterList";
 	}
 }
