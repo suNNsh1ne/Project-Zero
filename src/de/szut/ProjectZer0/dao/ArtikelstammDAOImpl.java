@@ -7,7 +7,6 @@ import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import de.szut.ProjectZer0.model.Artikelstamm;
-import de.szut.ProjectZer0.model.User;
 
 @Repository("ArtikelstammDAO")
 public class ArtikelstammDAOImpl extends AbstractDAO<Integer, Artikelstamm> implements ArtikelstammDAO{

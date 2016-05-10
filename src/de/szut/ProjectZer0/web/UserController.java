@@ -1,9 +1,5 @@
 package de.szut.ProjectZer0.web;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,7 +11,7 @@ import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
 
 @Controller
-public class RegisterController {
+public class UserController {
 	@Autowired
 	UserService userService;
 	

@@ -1,7 +1,6 @@
 package de.szut.ProjectZer0.model;
 
-	import java.sql.Date;
-import java.util.List;
+import java.sql.Date;
 import java.util.Set;
 
 import javax.persistence.Column;

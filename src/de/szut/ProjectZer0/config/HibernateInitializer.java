@@ -1,9 +1,7 @@
 package de.szut.ProjectZer0.config;
 
 import java.util.Properties;
-
 import javax.sql.DataSource;
-
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,10 +12,16 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import de.szut.ProjectZer0.model.Artikelstamm;
+import de.szut.ProjectZer0.model.Bestandsartikel;
+import de.szut.ProjectZer0.model.Lager;
+import de.szut.ProjectZer0.model.Lieferant;
+import de.szut.ProjectZer0.model.Mitarbeiter;
 import de.szut.ProjectZer0.model.User;
+import de.szut.ProjectZer0.model.Warenausgang;
+import de.szut.ProjectZer0.model.Wareneingang;
 
 @Configuration
 @EnableTransactionManagement
@@ -31,7 +35,10 @@ public class HibernateInitializer {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setAnnotatedClasses(new Class[] { User.class });
+        sessionFactory.setAnnotatedClasses(new Class[] { User.class/*, Mitarbeiter.class/*, 
+        		Lager.class, Lieferant.class, Artikelstamm.class, 
+        		Bestandsartikel.class, Wareneingang.class, Warenausgang.class*/});
+        //sessionFactory.getConfiguration().addAnnotatedClass(Artikelstamm.class);
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
      }
