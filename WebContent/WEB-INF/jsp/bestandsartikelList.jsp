@@ -29,4 +29,8 @@
 		<br /> <a href="<c:url value='/menu/bestandsartikelNew' />">
 			<button class="button">Bestandsartikel hinzufügen</button>
 		</a>
+		
+		<script type="text/javascript">				
+			document.title = 'Bestandsartikelliste';
+		</script>
 <%@ include file="footer.jsp"%>

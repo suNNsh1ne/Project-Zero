@@ -23,4 +23,8 @@
 		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
 			<button class="button">Lieferant hinzufügen</button>
 		</a>
+		
+		<script type="text/javascript">				
+			document.title = 'Lieferantenliste';
+		</script>
 <%@ include file="footer.jsp"%>

@@ -24,4 +24,8 @@
 		</table>
 		<a href="<c:url value='/register' />"><button class="button">Add New Account</button></a> 
 		<a href="<c:url value='/login' />"><button class="button">Back to Login</button></a>
+		
+		<script type="text/javascript">				
+			document.title = 'Benutzerliste';
+		</script>
 <%@ include file="footer.jsp"%>

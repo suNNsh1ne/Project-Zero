@@ -25,4 +25,8 @@
 			</table>
 		</form:form>
 		<br /> <br />
+		
+		<script type="text/javascript">				
+			document.title = 'Neuen Mitarbeiter anlegen';
+		</script>
 <%@ include file="footer.jsp"%>

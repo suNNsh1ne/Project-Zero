@@ -29,4 +29,8 @@
 		<br /> <a href="<c:url value='/menu/artikelstammNew' />">
 			<button class="button">Artikel hinzufügen</button>
 		</a>
+		
+		<script type="text/javascript">				
+			document.title = 'Artikelstammliste';
+		</script>
 <%@ include file="footer.jsp"%>

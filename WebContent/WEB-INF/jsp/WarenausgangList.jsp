@@ -27,4 +27,8 @@
 		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
 			<button class="button">Mitarbeiter hinzufügen</button>
 		</a>
+		
+		<script type="text/javascript">				
+			document.title = 'Warenausgang';
+		</script>
 <%@ include file="footer.jsp"%>

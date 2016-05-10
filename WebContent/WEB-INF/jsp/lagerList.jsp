@@ -31,4 +31,8 @@
 		<br /> <a href="<c:url value='/lagerNew' />">
 			<button class="button">Lager hinzufügen</button>
 		</a>
+		
+		<script type="text/javascript">				
+			document.title = 'Lagerliste';
+		</script>
 <%@ include file="footer.jsp"%>

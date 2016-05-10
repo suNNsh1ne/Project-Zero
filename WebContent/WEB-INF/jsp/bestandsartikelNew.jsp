@@ -32,4 +32,7 @@
 			</table>
 		</form:form>
 		<br /> <br />
+		<script type="text/javascript">				
+			document.title = 'Neuen Bestandsartikel anlegen';
+		</script>
 <%@ include file="footer.jsp"%>

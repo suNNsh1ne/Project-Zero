@@ -39,4 +39,8 @@
     </form:form>
     <br/>
     <br/>
+    
+    <script type="text/javascript">				
+		document.title = 'Neuen Benutzer anlegen';
+	</script>
 <%@ include file="footer.jsp"%>
