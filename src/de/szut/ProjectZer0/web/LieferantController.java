@@ -20,7 +20,7 @@ public class LieferantController {
 	@RequestMapping(value = {"/lieferantNew"}, method = RequestMethod.GET)
 	public String lieferantNew(ModelMap model) {
 		Lieferant lieferant = new Lieferant();
-        model.addAttribute("lieferant", lieferant);
+        model.addAttribute("Lieferant", lieferant);
         model.addAttribute("edit", false);
         return "lieferantNew";
 	}

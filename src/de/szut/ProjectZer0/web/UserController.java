@@ -11,7 +11,7 @@ import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
 
 @Controller
-public class RegisterController {
+public class UserController {
 	@Autowired
 	UserService userService;
 	

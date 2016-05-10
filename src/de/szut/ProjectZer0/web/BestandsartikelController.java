@@ -19,7 +19,7 @@ public class BestandsartikelController {
 	@RequestMapping(value = {"/bestandsartikelNew"}, method = RequestMethod.GET)
 	public String bestandsartikelNew(ModelMap model) {
 		Bestandsartikel bestandsartikel = new Bestandsartikel();
-        model.addAttribute("bestandsartikel", bestandsartikel);
+        model.addAttribute("Bestandsartikel", bestandsartikel);
         model.addAttribute("edit", false);
         return "bestandsartikelNew";
 	}
@@ -35,7 +35,7 @@ public class BestandsartikelController {
         bestandsartikelService.saveBestandsartikel(bestandsartikel);
  
         //model.addAttribute("success", "Bestandsartikel " + bestandsartikel.getBezeichnung() + " registered successfully.");
-        return "bestandsartikelList";
+        return "redirect:bestandsartikelList";
     }
 	
 	@RequestMapping(value = {"/bestandsartikelList"}, method = RequestMethod.GET)

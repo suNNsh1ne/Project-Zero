@@ -26,8 +26,6 @@ public class LieferantServiceImpl implements LieferantService {
         if(entity!=null){
         	entity.setAnsprechpartner(Lieferant.getAnsprechpartner());
         	entity.setAdresse(Lieferant.getAdresse());
-        	entity.setArtikelstämme(Lieferant.getArtikelstämme());
-        	entity.setWareneingang(Lieferant.getWareneingang());
         }
     }
  
