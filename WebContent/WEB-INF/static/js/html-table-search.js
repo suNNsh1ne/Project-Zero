@@ -21,7 +21,7 @@
 			pattern = (caseSensitive)?RegExp(searchFieldVal):RegExp(searchFieldVal, 'i');
 			tableObj.find('tbody tr').hide().each(function(){
 				var currentRow = $(this);
-				currentRow.find('td').each(function(){
+				currentRow.find('.searchable').each(function(){
 					if(pattern.test($(this).html())){
 						currentRow.show();
 						return false;

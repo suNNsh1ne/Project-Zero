@@ -12,6 +12,7 @@
 
 
 <table class="table table-hover search-table">
+	<thead>
 	<tr>
 		<th>Name</th>
 		<th>Password</th>
@@ -21,20 +22,21 @@
 		<th></th>
 		<th></th>
 	</tr>
+	</thead>
 	<c:forEach items="${User}" var="user">
+	<tbody>
 		<tr>
-			<td>${user.username}</td>
-			<td>${user.password}</td>
-			<td>${user.userId}</td>
-			<td>${user.permissionPriority}</td>
-			<td><a href="<c:url value='/register' />" class="tooltip" data-tooltip="Add"><span class="fa fa-plus-square" aria-hidden="true"></span></a></td>
+			<td class="searchable">${user.username}</td>
+			<td class="searchable">${user.password}</td>
+			<td class="searchable">${user.userId}</td>
+			<td class="searchable">${user.permissionPriority}</td>
 			<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
 			<td><a href="<c:url value='/userDel' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
 		</tr>
+	</tbody>
 	</c:forEach>
 </table>
 <a href="<c:url value='/register' />"><button class="button">Add New Account</button></a> 
-<a href="<c:url value='/login' />"><button class="button">Back to Login</button></a>
 
 <script type="text/javascript">				
 	document.title = 'Benutzerliste';

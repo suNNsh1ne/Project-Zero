@@ -38,48 +38,4 @@ public class UserDAOImpl extends AbstractDAO<Integer, User> implements UserDAO{
         criteria.add(Restrictions.eq("username", username));
         return (User) criteria.uniqueResult();
     }
-	
-	
-	/*
-	private HibernateTemplate hibernateTemplate;
-	private SessionFactory sessionfactory;
-	
-	public void setSessionFactory(SessionFactory sessionFactory)
-	{
-		this.hibernateTemplate = new HibernateTemplate(sessionFactory);
-	}
-	
-	@Transactional
-	public void saveUser(User user) {
-
-
-		sessionfactory.getCurrentSession().saveOrUpdate(user);
-	}
-	@Transactional
-	public void delUser(User user) {
-		hibernateTemplate.delete(user);
-		
-	}
-
-	@SuppressWarnings("unchecked")
-	@Transactional
-	public List<User> listUser() {
-		return (List<User>) hibernateTemplate.find("from User");
-	}
-	
-	@Transactional
-	public User getUser(Integer id) {
-				return (User)sessionfactory.getCurrentSession().get(User.class, id);
-	}
-
-	
-	@SuppressWarnings("unchecked")
-	@Transactional
-	public List<User> getByName(String username) {
-		Query query = sessionfactory.getCurrentSession().createQuery("from User where name =" + username);
-		//evtl änderung vornehmen
-		List<User> list = query.list();
-		return list;
-	}*/
-
 }

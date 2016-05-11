@@ -22,16 +22,18 @@ public class UserController {
 	@RequestMapping(value = {"/userlist"}, method = RequestMethod.GET)
 	public String listAllUser(HttpServletRequest req, ModelMap model)
 	{
-		if(req.getSession().getAttribute("user") != null)
+		User checkUser = (User) req.getSession().getAttribute("user");
+		if(checkUser != null)
 		{
+			if(checkUser.getPermissionPriority() >=3)
+			{
 			List<User> user = userService.getAllUser();
 			model.addAttribute("User", user);
 			return "userList";
+			}
+			return "berechtigung";
 		}
-		else
-		{
-			return "error";
-		}
+		return "redirect:login";
 	}
 	
 	@RequestMapping(value = {"/register"}, method = RequestMethod.GET)
