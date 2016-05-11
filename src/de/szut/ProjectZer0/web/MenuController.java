@@ -32,6 +32,10 @@ public class MenuController {
 	@Autowired
 	UserService userService;
 
+	/*
+	 * Dieser Controller beinhaltet lediglich das Mapping für die /home Page,
+	 * welche direkt nach dem erfolgreichen einloggen angezeigt wird
+	 */
 	@RequestMapping("/home")
 	public String home(HttpServletRequest req, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
