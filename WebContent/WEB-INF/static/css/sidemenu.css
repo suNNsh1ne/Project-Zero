@@ -154,3 +154,47 @@
 	color: white;
 	text-align: left;
 }
+
+/* ************************** */
+/* Mediascreen für Responsive */
+/* ************************** */
+
+@media screen and (max-height:850px) {
+  #cssmenu ul .fa {
+	font-size: 30px;
+	line-height: 40px;
+	transition: all 350ms ease;
+	-moz-transition: all 350ms ease;
+	-webkit-transition: all 350ms ease;
+	-o-transition: all 350ms ease;
+}
+
+	#cssmenu ul li a:hover .fa {
+		font-size: 28px;
+		line-height: 40px;
+		transition: all 350ms ease;
+		-moz-transition: all 350ms ease;
+		-webkit-transition: all 350ms ease;
+		-o-transition: all 350ms ease;
+	}
+}
+
+@media screen and (max-height:680px) {
+  #cssmenu ul .fa {
+	font-size: 20px;
+	line-height: 25px;
+	transition: all 350ms ease;
+	-moz-transition: all 350ms ease;
+	-webkit-transition: all 350ms ease;
+	-o-transition: all 350ms ease;
+}
+
+	#cssmenu ul li a:hover .fa {
+		font-size: 18px;
+		line-height: 25px;
+		transition: all 350ms ease;
+		-moz-transition: all 350ms ease;
+		-webkit-transition: all 350ms ease;
+		-o-transition: all 350ms ease;
+	}
+}
