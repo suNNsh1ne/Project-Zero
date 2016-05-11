@@ -42,7 +42,7 @@ public class ArtikelstammController {
 	@RequestMapping(value = {"/artikelstammList"}, method = RequestMethod.GET)
 	public String listAllArtikelstamm(HttpServletRequest req, ModelMap model)
 	{
-		if(req.getSession().getAttribute("artikelstamm") != null)
+		if(req.getSession().getAttribute("user") != null)
 		{
 			model.addAttribute("Artikelstamm", artikelstammService.getAllArtikelstamm());
 			return "artikelstammList";

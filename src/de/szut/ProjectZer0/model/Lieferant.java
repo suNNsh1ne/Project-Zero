@@ -1,17 +1,14 @@
 package de.szut.ProjectZer0.model;
 
-	import java.util.List;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-	import javax.persistence.Entity;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -26,7 +23,7 @@ import javax.persistence.Table;
 		private int lieferantenId;
 		
 		@Column(name = "ADRESSE")
-		private String Adresse;
+		private String Addresse;
 		
 		@Column(name = "ANSPRECHPARTNER")
 		private String Ansprechpartner;
@@ -83,12 +80,12 @@ import javax.persistence.Table;
 			this.lieferantenId = lieferantenId;
 		}
 
-		public String getAdresse() {
-			return Adresse;
+		public String getAddresse() {
+			return Addresse;
 		}
 
-		public void setAdresse(String adresse) {
-			Adresse = adresse;
+		public void setAddresse(String adresse) {
+			Addresse = adresse;
 		}
 
 		public String getAnsprechpartner() {

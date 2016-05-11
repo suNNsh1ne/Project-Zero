@@ -35,7 +35,7 @@ public class LagerController {
         lagerService.saveLager(lager);
  
         //model.addAttribute("success", "Lager " + lager.getBezeichnung() + " registered successfully.");
-        return "lagerList";
+        return "redirect:lagerList";
     }
 	
 	@RequestMapping(value = {"/lagerList"}, method = RequestMethod.GET)

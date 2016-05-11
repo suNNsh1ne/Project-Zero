@@ -14,6 +14,6 @@
 			<li><a href="<c:url value='/lagerList' />" class="tooltip" data-tooltip="Lager"><span class="fa fa-cubes" aria-hidden="true"></span></a></li>
 			<li><a href="<c:url value='/wareneingangList' />" class="tooltip" data-tooltip="Wareneingang"><span class="fa fa-sign-in" aria-hidden="true"></span></a></li>
 			<li><a href="<c:url value='/warenausgangList' />" class="tooltip" data-tooltip="Warenausgang"><span class="fa fa-sign-out" aria-hidden="true"></span></a></li>
-			<li class='last'><a href="<c:url value='/login' />" class="tooltip" data-tooltip="Logout"><span class="fa fa-power-off" aria-hidden="true"></span></a></li>	
+			<li class='last'><a href="<c:url value='/logout' />" class="tooltip" data-tooltip="Logout"><span class="fa fa-power-off" aria-hidden="true"></span></a></li>	
 		</ul>
 	</div>
