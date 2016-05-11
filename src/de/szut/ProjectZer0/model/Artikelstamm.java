@@ -31,21 +31,18 @@ import javax.persistence.Table;
 		private String Beschreibung;
 		
 		@Column(name ="KATEGORIE")
-		private Integer Kategorie;
+		private int Kategorie;
 		
 		@Column(name ="ATTRIBUTE")
-		private Date Attribute;
-		
-		@Column(name ="ANZAHL")
-		private Date Anzahl;
+		private String Attribute;
 		
 		@Column(name ="PREIS")
-		private Date Preis;
+		private String Preis;
 		
-		@OneToMany(fetch = FetchType.EAGER, mappedBy = "artikelstamm",cascade = CascadeType.ALL)
+		@OneToMany(fetch = FetchType.EAGER, mappedBy = "artikelstamm",cascade = CascadeType.MERGE)
 		private Set<Bestandsartikel> Bestandsartikel;
 		
-		@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+		@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.MERGE)
 		@JoinTable(name = "lieferantZuweisung", joinColumns = { 
 				@JoinColumn(name = "ARTIKELSTAMM_ID", nullable = false, updatable = true)},
 				inverseJoinColumns = {@JoinColumn(name = "LIEFERANTEN_ID", nullable = false, updatable = true)
@@ -102,27 +99,19 @@ import javax.persistence.Table;
 			Kategorie = kategorie;
 		}
 
-		public Date getAttribute() {
+		public String getAttribute() {
 			return Attribute;
 		}
 
-		public void setAttribute(Date attribute) {
+		public void setAttribute(String attribute) {
 			Attribute = attribute;
 		}
 
-		public Date getAnzahl() {
-			return Anzahl;
-		}
-
-		public void setAnzahl(Date anzahl) {
-			Anzahl = anzahl;
-		}
-
-		public Date getPreis() {
+		public String getPreis() {
 			return Preis;
 		}
 
-		public void setPreis(Date preis) {
+		public void setPreis(String preis) {
 			Preis = preis;
 		}
 

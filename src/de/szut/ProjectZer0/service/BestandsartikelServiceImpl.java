@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.szut.ProjectZer0.dao.BestandsartikelDAO;
+import de.szut.ProjectZer0.model.Artikelstamm;
 import de.szut.ProjectZer0.model.Bestandsartikel;
 
 @Service("BestandsartikelService")
@@ -44,5 +45,14 @@ public class BestandsartikelServiceImpl implements BestandsartikelService {
 	@Override
 	public Bestandsartikel findById(int id) {
 		return dao.findById(id);
+	}
+
+	@Override
+	public void addArtikelstamm(int bestandsartikelId, Artikelstamm artikelstamm) {
+		Bestandsartikel object = dao.findById(bestandsartikelId);
+		if(object!=null){
+		 object.setArtikelstamm(artikelstamm);
+		}
+		
 	}
 }

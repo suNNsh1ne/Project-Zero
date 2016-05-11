@@ -2,7 +2,7 @@
 		<h2>Neues Lager...</h2>
 
 		<form:form method="POST" modelAttribute="Lager">
-			<form:input type="hidden" path="LagerId" id="LagerId" />
+			<form:input type="hidden" path="LagerID" id="LagerID" />
 			<table>
 				<tr>
 					<td><label for="name"></label></td>
@@ -11,21 +11,21 @@
 				</tr>
 
 				<tr>
-					<td><label for="Ort"></label></td>
-					<td><form:input path="Ort" placeholder="Ort" id="Ort" /></td>
-					<td><form:errors path="Ort" class="error" /></td>
+					<td><label for="ort"></label></td>
+					<td><form:input path="ort" placeholder="Ort" id="ort" /></td>
+					<td><form:errors path="ort" class="error" /></td>
 				</tr>
 				
 				<tr>
-					<td><label for="Kapazität"></label></td>
-					<td><form:input path="Kapazität" placeholder="Kapazität" id="Kapazität" /></td>
-					<td><form:errors path="Kapazität" class="error" /></td>
+					<td><label for="kapazität"></label></td>
+					<td><form:input path="kapazität" placeholder="Kapazität" id="kapazität" /></td>
+					<td><form:errors path="kapazität" class="error" /></td>
 				</tr>
 				
 				<tr>
-					<td><label for="Auslastung"></label></td>
-					<td><form:input path="Auslastung" placeholder="Auslastung" id="Auslastung" /></td>
-					<td><form:errors path="Auslastung" class="error" /></td>
+					<td><label for="auslastung"></label></td>
+					<td><form:input path="auslastung" placeholder="Auslastung" id="auslastung" /></td>
+					<td><form:errors path="auslastung" class="error" /></td>
 				</tr>
 
 				<tr>

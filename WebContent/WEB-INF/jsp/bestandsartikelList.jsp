@@ -9,11 +9,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Artikelstamm</th>
 				<th>Anzahl</th>
-				<th>Lager</th>
-				<th>Wareneingang</th>
-				<th>Warenausgang</th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -22,15 +18,11 @@
 			<c:forEach items="${Bestandsartikel}" var="value">
 			<tbody>
 				<tr>
-					<td>${value.BestandsartikelId}</td>
-					<td>${value.Artikelstamm}</td>
-					<td>${value.Anzahl}</td>
-					<td>${value.Lager}</td>
-					<td>${value.Wareneingang}</td>
-					<td>${value.Warenausgang}</td>
-					<td><a href="<c:url value='/register' />" class="tooltip" data-tooltip="Add"><span class="fa fa-plus-square" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
+					<td>${value.bestandsartikelId}</td>
+					<td>${value.anzahl}</td>
+					<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
+					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
+					<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/home' />" ><span class="fa fa-minus-circle" aria-hidden="true"></span></a></button></td>
 				</tr>
 			</tbody>
 			</c:forEach>
