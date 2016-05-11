@@ -8,6 +8,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import de.szut.ProjectZer0.model.Lieferant;
 import de.szut.ProjectZer0.service.LieferantService;
 /*
@@ -84,5 +86,15 @@ public class LieferantController {
 			return "lieferantList";
 		}
 		return "redirect:login";
+	}
+	
+	/*
+	 * Dieses Mapping dient dazu einen bestimmten Lieferanten aus der Tabelle zu löschen
+	 */
+	@RequestMapping(value = "/lieferantDel", method = RequestMethod.POST)
+	public String lieferantDelete(ModelMap model, @RequestParam String lieferantId){
+		
+		lieferantService.deleteLieferantById(lieferantId);
+		return "redirect:lieferantList";
 	}
 }

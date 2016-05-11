@@ -8,6 +8,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import de.szut.ProjectZer0.model.Lager;
 import de.szut.ProjectZer0.service.LagerService;
 /*
@@ -69,5 +71,15 @@ public class LagerController {
 			return "lagerList";
 		}
 		return "redirect:login";
+	}
+	
+	/*
+	 * Dieses Mapping dient dazu einen bestimmten Lager aus der Tabelle zu löschen
+	 */
+	@RequestMapping(value = "/lagerDel", method = RequestMethod.POST)
+	public String lagerDelete(ModelMap model, @RequestParam String lagerId){
+		
+		lagerService.deleteLagerById(lagerId);
+		return "redirect:lagerList";
 	}
 }

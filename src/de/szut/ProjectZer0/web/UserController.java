@@ -79,11 +79,9 @@ public class UserController {
 
     }
 
-	@RequestMapping("/registerCheck")
-	public String registercheck() {
-		return "redirect:login";
-	}
-
+	/*
+	 * Dieses Mapping dient dazu einen bestimmten User aus der Tabelle zu löschen
+	 */
 	@RequestMapping(value = "/userDel", method = RequestMethod.POST)
 	public String userDelete(ModelMap model, @RequestParam String userId){
 		
