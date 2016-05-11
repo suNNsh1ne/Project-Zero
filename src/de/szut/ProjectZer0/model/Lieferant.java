@@ -1,16 +1,14 @@
 package de.szut.ProjectZer0.model;
 
-	import java.util.List;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-	import javax.persistence.Entity;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-	import javax.persistence.Id;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -20,7 +18,7 @@ import javax.persistence.Table;
 	public class Lieferant {
 		
 		@Id
-		@GeneratedValue
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name = "LIEFERANTEN_ID")
 		private int lieferantenId;
 		
@@ -30,15 +28,15 @@ import javax.persistence.Table;
 		@Column(name = "ANSPRECHPARTNER")
 		private String Ansprechpartner;
 		
-		@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lieferantZuweisung",cascade = CascadeType.ALL)
+		@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lieferantZuweisung",cascade = CascadeType.MERGE)
 		private Set<Artikelstamm> artikelstaemme;
 		
 		@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-		@JoinColumn(name = "WARENEINGANG_ID", nullable = false)
+		@JoinColumn(name = "WARENEINGANG_ID")
 		private Wareneingang wareneingang;
 		
 		@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-		@JoinColumn(name = "WARENAUSGANG_ID", nullable = false)
+		@JoinColumn(name = "WARENAUSGANG_ID")
 		private Warenausgang warenausgang;
 		
 		public Wareneingang getWareneingang() {
@@ -86,8 +84,8 @@ import javax.persistence.Table;
 			return Adresse;
 		}
 
-		public void setAdresse(String adresse) {
-			Adresse = adresse;
+		public void setAdresse(String Adresse) {
+			this.Adresse = Adresse;
 		}
 
 		public String getAnsprechpartner() {

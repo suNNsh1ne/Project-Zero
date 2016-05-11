@@ -1,7 +1,17 @@
 <%@ include file="header.jsp"%>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Source : http://www.jqueryscript.net/table/Simple-jQuery-Plugin-For-Html-Table-Live-Search.html -->
+
+<script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
+<script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
+
+
+
 <h1>Benutzerliste</h1>
 
-<table class="table table-hover">
+
+<table class="table table-hover search-table">
 	<tr>
 		<th>Name</th>
 		<th>Password</th>
@@ -18,8 +28,8 @@
 			<td>${user.userId}</td>
 			<td>${user.permissionPriority}</td>
 			<td><a href="<c:url value='/register' />" class="tooltip" data-tooltip="Add"><span class="fa fa-plus-square" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
+			<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
+			<td><a href="<c:url value='/userDel' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
 		</tr>
 	</c:forEach>
 </table>

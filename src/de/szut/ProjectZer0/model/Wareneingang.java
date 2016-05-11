@@ -1,16 +1,14 @@
 package de.szut.ProjectZer0.model;
 
 
-	import java.sql.Date;
-import java.util.List;
+import java.sql.Date;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-	import javax.persistence.Entity;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-	import javax.persistence.Id;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,7 +25,7 @@ import javax.persistence.Table;
 		private int Anzahl;
 		
 		@Column(name ="EINGANGS_DATUM")
-		private Date Eingangs_Datum;
+		private String Eingangs_Datum;
 		
 		@OneToMany(fetch = FetchType.EAGER, mappedBy = "wareneingang",cascade = CascadeType.ALL)
 		private Set<Bestandsartikel> bestandsartikel;
@@ -64,11 +62,11 @@ import javax.persistence.Table;
 			Anzahl = anzahl;
 		}
 
-		public Date getEingangs_Datum() {
+		public String getEingangs_Datum() {
 			return Eingangs_Datum;
 		}
 
-		public void setEingangs_Datum(Date eingangs_Datum) {
+		public void setEingangs_Datum(String eingangs_Datum) {
 			Eingangs_Datum = eingangs_Datum;
 		}
 

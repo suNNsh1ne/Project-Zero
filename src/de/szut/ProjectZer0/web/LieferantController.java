@@ -16,41 +16,55 @@ public class LieferantController {
 
 	@Autowired
 	LieferantService lieferantService;
-	
-	@RequestMapping(value = {"/lieferantNew"}, method = RequestMethod.GET)
-	public String lieferantNew(ModelMap model) {
-		Lieferant lieferant = new Lieferant();
-        model.addAttribute("Lieferant", lieferant);
-        model.addAttribute("edit", false);
-        return "lieferantNew";
+
+	@RequestMapping(value = {"/generateLieferanten"}, method = RequestMethod.GET)
+	public String generateLieferanten(ModelMap model) {
+		Lieferant lieferant1 = new Lieferant();
+		Lieferant lieferant2 = new Lieferant();
+		lieferant1.setAnsprechpartner("Klaus");
+		lieferant1.setAdresse("Delmenhorst");
+		lieferant2.setAnsprechpartner("Peter");
+		lieferant2.setAdresse("Bremen");
+		lieferantService.saveLieferant(lieferant1);
+		lieferantService.saveLieferant(lieferant2);
+        return "home";
 	}
 	
+	@RequestMapping(value = { "/lieferantNew" }, method = RequestMethod.GET)
+	public String lieferantNew(HttpServletRequest req, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+			Lieferant lieferant = new Lieferant();
+			model.addAttribute("Lieferant", lieferant);
+			model.addAttribute("edit", false);
+			return "lieferantNew";
+		}
+		return "redirect:login";
+	}
+
 	@RequestMapping(value = { "/lieferantNew" }, method = RequestMethod.POST)
-    public String saveLieferant(Lieferant lieferant, BindingResult result,
-            ModelMap model) {
- 
-        if (result.hasErrors()) {
-            return "lieferantNew";
-        }
-         
-        lieferantService.saveLieferant(lieferant);
- 
-        //model.addAttribute("success", "Lieferant " + lieferant.getBezeichnung() + " registered successfully.");
-        return "lieferantList";
-    }
-	
-	@RequestMapping(value = {"/lieferantList"}, method = RequestMethod.GET)
-	public String listAllLieferant(HttpServletRequest req, ModelMap model)
-	{
-		if(req.getSession().getAttribute("lieferant") != null)
-		{
+	public String saveLieferant(HttpServletRequest req, Lieferant lieferant, BindingResult result, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+
+			if (result.hasErrors()) {
+				return "lieferantNew";
+			}
+
+			lieferantService.saveLieferant(lieferant);
+
+			// model.addAttribute("success", "Lieferant " +
+			// lieferant.getBezeichnung() + " registered successfully.");
+			return "redirect:lieferantList";
+		}
+		return "redirect:login";
+	}
+
+	@RequestMapping(value = { "/lieferantList" }, method = RequestMethod.GET)
+	public String listAllLieferant(HttpServletRequest req, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
 			List<Lieferant> lieferant = lieferantService.getAllLieferant();
 			model.addAttribute("Lieferant", lieferant);
 			return "lieferantList";
 		}
-		else
-		{
-			return "error";
-		}
+		return "redirect:login";
 	}
 }

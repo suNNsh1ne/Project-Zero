@@ -1,6 +1,9 @@
 <%@ include file="header.jsp"%>
+<script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
+<script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
+
 		<h2>Wareneinagng</h2>
-		<table class="table table-hover">
+		<table class="table table-hover search-table">
 			<tr>
 				<th>ID</th>
 				<th>Lieferanten</th>
@@ -24,9 +27,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
-			<button class="button">Mitarbeiter hinzufügen</button>
-		</a>
+		<br />
 		
 		<script type="text/javascript">				
 			document.title = 'Wareneingang';
