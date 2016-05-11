@@ -19,8 +19,8 @@ import javax.persistence.Table;
 		
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
-		@Column(name = "LIEFERANTEN_ID")
-		private int lieferantenId;
+		@Column(name = "LIEFERANT_ID")
+		private int lieferantId;
 		
 		@Column(name = "ADRESSE")
 		private String Adresse;
@@ -48,11 +48,11 @@ import javax.persistence.Table;
 		}
 		
 		public int getLieferantenId() {
-			return lieferantenId;
+			return lieferantId;
 		}
 
 		public void setLieferantenId(int lieferantenId) {
-			this.lieferantenId = lieferantenId;
+			this.lieferantId = lieferantenId;
 		}
 
 		public Warenausgang getWarenausgang() {
@@ -73,11 +73,11 @@ import javax.persistence.Table;
 		}
 
 		public int getLieferantId() {
-			return lieferantenId;
+			return lieferantId;
 		}
 
 		public void setLieferantId(int lieferantenId) {
-			this.lieferantenId = lieferantenId;
+			this.lieferantId = lieferantenId;
 		}
 
 		public String getAdresse() {

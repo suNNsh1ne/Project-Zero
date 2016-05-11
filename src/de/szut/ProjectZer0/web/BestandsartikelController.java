@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import de.szut.ProjectZer0.model.Artikelstamm;
 import de.szut.ProjectZer0.model.Bestandsartikel;
@@ -74,5 +75,15 @@ public class BestandsartikelController {
 			return "bestandsartikelList";
 		}
 		return "redirect:login";
+	}
+	
+	/*
+	 * Dieses Mapping dient dazu einen bestimmten Artikel aus der Tabelle zu löschen
+	 */
+	@RequestMapping(value = "/bestandsartikelDel", method = RequestMethod.POST)
+	public String artikelstammDelete(ModelMap model, @RequestParam String bestandsartikelId){
+		
+		bestandsartikelService.deleteBestandsartikelById(bestandsartikelId);
+		return "redirect:bestandsartikelList";
 	}
 }

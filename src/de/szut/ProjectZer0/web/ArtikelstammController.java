@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import de.szut.ProjectZer0.model.Artikelstamm;
 import de.szut.ProjectZer0.model.Bestandsartikel;
 import de.szut.ProjectZer0.model.Lieferant;
@@ -67,8 +69,18 @@ public class ArtikelstammController {
 		if (req.getSession().getAttribute("user") != null) {
 			List<Artikelstamm> artikelstamm = artikelstammService.getAllArtikelstamm();
 			model.addAttribute("Artikelstamm", artikelstamm);
-			return "redirect:artikelstammList";
+			return "artikelstammList";
 		}
 		return "redirect:login";
+	}
+	
+	/*
+	 * Dieses Mapping dient dazu einen bestimmten Artikelstamm aus der Tabelle zu löschen
+	 */
+	@RequestMapping(value = "/artikelstammDel", method = RequestMethod.POST)
+	public String artikelstammDelete(ModelMap model, @RequestParam String artikelstammId){
+		
+		artikelstammService.deleteArtikelstammById(artikelstammId);
+		return "redirect:artikelstammList";
 	}
 }

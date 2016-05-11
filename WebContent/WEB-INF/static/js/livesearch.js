@@ -3,4 +3,4 @@ $(document).ready(function(){
 					searchText:'Tabelle durchsuchen',
 					searchPlaceHolder:'Suche...'
 				});
-			});
+			}(jQuery));;
