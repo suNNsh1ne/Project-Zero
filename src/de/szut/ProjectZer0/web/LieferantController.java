@@ -49,7 +49,7 @@ public class LieferantController {
         lieferantService.saveLieferant(lieferant);
  
         //model.addAttribute("success", "Lieferant " + lieferant.getBezeichnung() + " registered successfully.");
-        return "lieferantList";
+        return "redirect:lieferantList";
     }
 	
 	@RequestMapping(value = {"/lieferantList"}, method = RequestMethod.GET)
