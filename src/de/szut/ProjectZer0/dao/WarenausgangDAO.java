@@ -7,5 +7,6 @@ import de.szut.ProjectZer0.model.Warenausgang;
 
 public interface WarenausgangDAO {
 	Bestandsartikel findById(int id);
+	public void deleteWarenausgangById(String id);
     List<Bestandsartikel> getAllBestandsartikel();
 }

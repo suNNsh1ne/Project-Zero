@@ -7,6 +7,7 @@ public interface LieferantDAO {
 	Lieferant findById(int id);
     void saveLieferant(Lieferant lieferant);  
     void deleteLieferantByAnsprechpartner(String Ansprechpartner);
+    public void deleteLieferantById(String id);
     List<Lieferant> getAllLieferant();
     Lieferant findLieferantByAnsprechpartner(String Ansprechpartner);
 }

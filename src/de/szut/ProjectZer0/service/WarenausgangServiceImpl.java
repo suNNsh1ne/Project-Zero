@@ -27,4 +27,10 @@ public class WarenausgangServiceImpl implements WarenausgangService {
 		return dao.getAllBestandsartikel();
 	}
 
+	@Override
+	public void deleteWarenausgangById(String id) {
+		dao.deleteWarenausgangById(id);
+		
+	}
+
 }

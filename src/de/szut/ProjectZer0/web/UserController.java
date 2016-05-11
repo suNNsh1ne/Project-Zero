@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
@@ -33,16 +34,18 @@ public class UserController {
 	@RequestMapping(value = {"/userlist"}, method = RequestMethod.GET)
 	public String listAllUser(HttpServletRequest req, ModelMap model)
 	{
-		if(req.getSession().getAttribute("user") != null)
+		User checkUser = (User) req.getSession().getAttribute("user");
+		if(checkUser != null)
 		{
+			if(checkUser.getPermissionPriority() >=3)
+			{
 			List<User> user = userService.getAllUser();
 			model.addAttribute("User", user);
 			return "userList";
+			}
+			return "berechtigung";
 		}
-		else
-		{
-			return "error";
-		}
+		return "redirect:login";
 	}
 	
 	/*
@@ -81,9 +84,11 @@ public class UserController {
 		return "redirect:login";
 	}
 
-	@RequestMapping("/userDel")
-	public String userDelete(){
-		userService.deleteUserByUsername("admin");
+	@RequestMapping(value = "/userDel", method = RequestMethod.POST)
+	public String userDelete(ModelMap model, @RequestParam String userId){
+		
+		//userService.deleteUserByUsername("alpine");
+		userService.deleteUserById(userId);
 		return "redirect:userlist";
 	}
 	

@@ -2,6 +2,7 @@ package de.szut.ProjectZer0.service;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +29,6 @@ public class BestandsartikelServiceImpl implements BestandsartikelService {
     		entity.setAnzahl(Bestandsartikel.getAnzahl());
         }
     }
- 
-    public void deleteBestandsartikelByArtikelstamm(String Artikelstamm){
-        dao.deleteBestandsartikelByArtikelstamm(Artikelstamm);
-    }
     
  
     public List<Bestandsartikel> getAllBestandsartikel() {
@@ -53,6 +50,12 @@ public class BestandsartikelServiceImpl implements BestandsartikelService {
 		if(object!=null){
 		 object.setArtikelstamm(artikelstamm);
 		}
+		
+	}
+
+	@Override
+	public void deleteBestandsartikelById(String id) {
+		dao.deleteBestandsartikelById(id);
 		
 	}
 }

@@ -46,4 +46,10 @@ public class LieferantServiceImpl implements LieferantService {
 	public Lieferant findById(int id) {
 		return dao.findById(id);
 	}
+
+	@Override
+	public void deleteLieferantById(String id) {
+		dao.deleteLieferantById(id);
+		
+	}
 }

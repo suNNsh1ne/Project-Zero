@@ -48,4 +48,10 @@ public class LagerServiceImpl implements LagerService {
 	public Lager findById(int id) {
 		return dao.findById(id);
 	}
+
+	@Override
+	public void deleteLagerById(String id) {
+		dao.deleteLagerById(id);
+		
+	}
 }

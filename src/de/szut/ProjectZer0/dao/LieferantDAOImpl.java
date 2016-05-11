@@ -21,8 +21,12 @@ public class LieferantDAOImpl extends AbstractDAO<Integer, Lieferant> implements
     }
  
     public void deleteLieferantByAnsprechpartner(String Ansprechpartner) {
-        Query query = getSession().createSQLQuery("delete from Lieferant where Ansprechpartner = :Ansprechpartner");
-        query.setString("ssn", Ansprechpartner);
+        Query query = getSession().createSQLQuery("delete from Lieferant where Ansprechpartner = :Ansprechpartner").setParameter("Ansprechpartner", Ansprechpartner);
+        query.executeUpdate();
+    }
+    
+    public void deleteLieferantById(String id) {
+        Query query = getSession().createSQLQuery("delete from Lieferanr where LIEFERANT_ID = :lieferantId").setParameter("lieferantId", id);
         query.executeUpdate();
     }
  

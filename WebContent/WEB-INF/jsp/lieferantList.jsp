@@ -1,8 +1,12 @@
 <%@ include file="header.jsp"%>
+<!-- Source : http://www.jqueryscript.net/table/Simple-jQuery-Plugin-For-Html-Table-Live-Search.html -->
 
+<script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
+<script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
 
 		<h2>Lieferanten</h2>
 		<table class="table table-hover search-table">
+		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Addresse</th>
@@ -13,7 +17,9 @@
 				<th></th>
 				<th></th>
 			</tr>
+		</thead>
 			<c:forEach items="${Lieferant}" var="value">
+			<tbody>
 				<tr>
 					<td>${value.lieferantenId}</td>
 					<td>${value.adresse}</td>
@@ -22,8 +28,9 @@
 					<td>${value.wareneingang}</td>
 					<td>${value.warenausgang}</td>
 					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
-					<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/home' />" ><span class="fa fa-minus-circle" aria-hidden="true"></span></a></button></td>
+					<td><form method="POST" action="lieferantenDel"><input type="hidden" id="lieferantenId" name="lieferantenId" value="${value.lieferantenId}"/><input class="table_button tooltip" data-tooltip="Löschen" type="submit"><span class="fa fa-minus-circle" aria-hidden="true"></span></form></td>
 				</tr>
+			</tbody>
 			</c:forEach>
 		</table>
 		<br /> <a href="<c:url value='/lieferantNew' />">
