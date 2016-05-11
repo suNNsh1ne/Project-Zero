@@ -8,7 +8,7 @@
 				<th>ID</th>
 				<th>Lieferanten</th>
 				<th>Bestandsartikel</th>
-				<th>Anzahl</td>
+				<th>Anzahl</th>
 				<th>Ausgangs_Datum</th>
 				<th></th>
 				<th></th>
