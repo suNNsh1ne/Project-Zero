@@ -1,6 +1,5 @@
 package de.szut.ProjectZer0.web;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,18 +27,17 @@ import de.szut.ProjectZer0.service.UserService;
 // home.jsp erreichbar über Menü
 
 @Controller
-public class MenuController {   
-	
+public class MenuController {
+
 	@Autowired
 	UserService userService;
 
 	@RequestMapping("/home")
-	public String home() {
-		
-		return "home";
+	public String home(HttpServletRequest req, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+			return "home";
+		} else {
+			return "redirect:login";
+		}
 	}
-	
-
-
-
 }
