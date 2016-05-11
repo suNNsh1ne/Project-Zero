@@ -38,7 +38,7 @@ public class LagerController {
 
 			// model.addAttribute("success", "Lager " + lager.getBezeichnung() +
 			// " registered successfully.");
-			return "lagerList";
+			return "redirect:lagerList";
 		}
 		return "redirect:login";
 	}

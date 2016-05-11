@@ -37,7 +37,7 @@ public class ArtikelstammController {
 	public String saveArtikelstamm(HttpServletRequest req, Artikelstamm artikelstamm, BindingResult result, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
 			artikelstammService.saveArtikelstamm(artikelstamm);
-			return "redirect:lieferantList";
+			return "redirect:artikelstammList";
 		}
 		return "redirect:login";
 	}
