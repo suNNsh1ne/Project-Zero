@@ -26,8 +26,12 @@ public class MitarbeiterDAOImpl extends AbstractDAO<Integer, Mitarbeiter> implem
     }
     
     public void deleteMitarbeiterByName(String Name) {
-        Query query = getSession().createSQLQuery("delete from Mitarbeiter where Name = :Name");
-        query.setString("ssn", Name);
+        Query query = getSession().createSQLQuery("delete from Mitarbeiter where Name = :Name").setParameter("Name", Name);
+        query.executeUpdate();
+    }
+    
+    public void deleteMitarbeiterById(String id) {
+        Query query = getSession().createSQLQuery("delete from Mitarbeiter where MITARBEITER_ID = :mitarbeiterId").setParameter("mitarbeiterId", id);
         query.executeUpdate();
     }
  

@@ -17,10 +17,9 @@ public class ArtikelstammDAOImpl extends AbstractDAO<Integer, Artikelstamm> impl
     public void saveArtikelstamm(Artikelstamm Artikelstamm) {
         persist(Artikelstamm);
     }
- 
-    public void deleteArtikelstammByBezeichnung(String Bezeichnung) {
-        Query query = getSession().createSQLQuery("delete from Artikelstamm where Bezeichnung = :Bezeichnung");
-        query.setString("ssn", Bezeichnung);
+    
+    public void deleteArtikelstammById(String id) {
+        Query query = getSession().createSQLQuery("delete from Artikelstamm where ARTIKELSTAMM_ID = :artikelstammId").setParameter("artikelstammId", id);
         query.executeUpdate();
     }
  

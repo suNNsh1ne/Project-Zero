@@ -20,10 +20,10 @@ public class BestandsartikelDAOImpl extends AbstractDAO<Integer, Bestandsartikel
     public void saveBestandsartikel(Bestandsartikel Bestandsartikel) {
         persist(Bestandsartikel);
     }
- 
-    public void deleteBestandsartikelByArtikelstamm(String Artikelstamm) {
-        Query query = getSession().createSQLQuery("delete from Bestandsartikel where username = :username");
-        query.setString("ssn", Artikelstamm);
+
+    
+    public void deleteBestandsartikelById(String id) {
+        Query query = getSession().createSQLQuery("delete from Bestandsartikel where BESTANDSARTIKEL_ID = :bestandsartikelId").setParameter("bestandsartikelId", id);
         query.executeUpdate();
     }
  

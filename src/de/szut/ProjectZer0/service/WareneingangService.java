@@ -6,5 +6,6 @@ import de.szut.ProjectZer0.model.Wareneingang;
 
 public interface WareneingangService {
 	Wareneingang findById(int id);
+	public void deleteWareneingangById(String id);
     List<Wareneingang> getAllBestandsartikel();
 }

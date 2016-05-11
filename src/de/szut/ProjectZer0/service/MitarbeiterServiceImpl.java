@@ -46,6 +46,12 @@ public class MitarbeiterServiceImpl implements MitarbeiterService {
 	public Mitarbeiter findById(int id) {
 		return dao.findById(id);
 	}
+
+	@Override
+	public void deleteMitarbeiterById(String id) {
+		dao.deleteMitarbeiterById(id);
+		
+	}
 	
 
 }

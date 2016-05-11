@@ -22,8 +22,12 @@ public class LagerDAOImpl extends AbstractDAO<Integer, Lager> implements LagerDA
     }
  
     public void deleteLagerByName(String name) {
-        Query query = getSession().createSQLQuery("delete from Lager where username = :username");
-        query.setString("ssn", name);
+        Query query = getSession().createSQLQuery("delete from Lager where name = :name").setParameter("name", name);
+        query.executeUpdate();
+    }
+    
+    public void deleteLagerById(String id) {
+        Query query = getSession().createSQLQuery("delete from Lager where Lager_ID = :lagerId").setParameter("lagerId", id);
         query.executeUpdate();
     }
  

@@ -8,7 +8,7 @@ import de.szut.ProjectZer0.model.Bestandsartikel;
 public interface BestandsartikelService {
 	Bestandsartikel findById(int id);
     void saveBestandsartikel(Bestandsartikel user);  
-    void deleteBestandsartikelByArtikelstamm(String Artikelstamm);
+    public void deleteBestandsartikelById(String id);
     List<Bestandsartikel> getAllBestandsartikel();
     void addArtikelstamm(int bestandsartikelId, Artikelstamm artikelstamm);
     Bestandsartikel findBestandsartikelByArtikelstamm(String Artikelstamm);

@@ -34,6 +34,10 @@ public class UserServiceImpl implements UserService {
         dao.deleteUserByUsername(username);
     }
     
+    public void deleteUserById(String id){
+        dao.deleteUserById(id);
+    }
+    
  
     public List<User> getAllUser() {
     	return dao.getAllUser();

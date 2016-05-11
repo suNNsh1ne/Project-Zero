@@ -33,10 +33,6 @@ public class ArtikelstammServiceImpl implements ArtikelstammService{
         	entity.setPreis((Artikelstamm.getPreis()));
         }
     }
- 
-    public void deleteArtikelstammByBezeichnung(String Bezeichnung){
-        dao.deleteArtikelstammByBezeichnung(Bezeichnung);
-    }
     
  
     public List<Artikelstamm> getAllArtikelstamm() {
@@ -71,6 +67,12 @@ public class ArtikelstammServiceImpl implements ArtikelstammService{
         	tempBestandsartikel.add(bestandsartikel);
         	object.setBestandsartikel(tempBestandsartikel);
         }
+	}
+
+	@Override
+	public void deleteArtikelstammById(String id) {
+		dao.deleteArtikelstammById(id);
+		
 	}
 
 

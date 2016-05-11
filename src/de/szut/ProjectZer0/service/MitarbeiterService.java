@@ -8,6 +8,7 @@ public interface MitarbeiterService {
 	Mitarbeiter findById(int id);
     void saveMitarbeiter(Mitarbeiter mitarbeiter);  
     void deleteMitarbeiterByName(String Name);
+    public void deleteMitarbeiterById(String id);
     List<Mitarbeiter> getAllMitarbeiter();
     Mitarbeiter findMitarbeiterByName(String Name);
      
