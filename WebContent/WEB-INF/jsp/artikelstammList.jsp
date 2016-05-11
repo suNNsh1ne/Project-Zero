@@ -3,7 +3,6 @@
 
 <script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
 <script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
-
 		<h2>Artikel</h2>
 		<table class="table table-hover search-table">
 		<thead>
@@ -13,7 +12,6 @@
 				<th>Kategorie</th>
 				<th>Attribute</th>
 				<th>Preis</th>
-				<th></th>
 				<th></th>
 				<th></th>
 			</tr>

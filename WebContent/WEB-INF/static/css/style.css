@@ -192,6 +192,9 @@ input[type="text"], input[type="password"] {
 	color:#ffffff;
 	border-radius: 5px;
 	border: 0px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box; 
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -317,3 +320,24 @@ input[type="text"], input[type="password"] {
 	.menu_hidden {
 		display: none !important;
 	}
+
+/* *************** */
+/* Search Specific */
+/* *************** */
+.search {
+	width: 500px;
+}
+	
+.search_icon {
+	background: #E8534F;
+	height: 35px;
+	width: 80px;
+	margin-bottom: -47px;
+	margin-left: -42px;
+	color: #ffffff;
+	font-size: 25px;
+	display: block;
+	padding: 8px 0px 0px 10px;
+	border: 1px solid #E8534F;
+	border-radius: 5px;
+}

@@ -20,7 +20,6 @@
 		<th>PermissionPriority</th>
 		<th></th>
 		<th></th>
-		<th></th>
 	</tr>
 	</thead>
 	<c:forEach items="${User}" var="user">

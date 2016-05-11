@@ -13,7 +13,6 @@
 				<th class="searchable">Lager</th>
 				<th></th>
 				<th></th>
-				<th></th>
 			</tr>
 			</thead>
 			<c:forEach items="${Mitarbeiter}" var="value">
@@ -22,7 +21,6 @@
 					<td>${value.mitarbeiterId}</td>
 					<td>${value.Name}</td>
 					<td>${value.Lager}</td>
-					<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
 					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
 					<td><form method="POST" action="mitarbeiterDel"><input type="hidden" id="mitarbeiterId" name="mitarbeiterId" value="${value.mitarbeiterId}"/><input class="table_button tooltip" data-tooltip="Löschen" type="submit"><span class="fa fa-minus-circle" aria-hidden="true"></span></form></td>
 				</tr>

@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="${cp}/static/css/style.css">
 	<script type="text/javascript" src="${cp}/static/js/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="${cp}/static/js/custom.js"></script>
+	<script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
+	<script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
 	
 	<link rel="shortcut icon" href="${cp}/static/images/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="57x57" href="${cp}/static/images/apple-touch-icon-57x57.png">
