@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
@@ -83,9 +84,11 @@ public class UserController {
 		return "redirect:login";
 	}
 
-	@RequestMapping("/userDel")
-	public String userDelete(){
-		userService.deleteUserByUsername("admin");
+	@RequestMapping(value = "/userDel", method = RequestMethod.POST)
+	public String userDelete(ModelMap model, @RequestParam String userId){
+		
+		//userService.deleteUserByUsername("alpine");
+		userService.deleteUserById(userId);
 		return "redirect:userlist";
 	}
 	

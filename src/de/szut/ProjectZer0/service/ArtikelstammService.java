@@ -9,7 +9,7 @@ import de.szut.ProjectZer0.model.Lieferant;
 public interface ArtikelstammService {
 	Artikelstamm findById(int id);
     void saveArtikelstamm(Artikelstamm artikelstamm);  
-    void deleteArtikelstammByBezeichnung(String Bezeichnung);
+    public void deleteArtikelstammById(String id);
     List<Artikelstamm> getAllArtikelstamm();
     void addLieferant(int artikelstammId, Lieferant lieferant);
     void addBestandsartikel(int artikelstammId, Bestandsartikel bestandsartikel);

@@ -22,14 +22,14 @@
 			<tbody>
 				<tr>
 				<c:if test="value"></c:if>
-					<td>${value.artikelstammId}</td>
-					<td>${value.bezeichnung}</td>
-					<td>${value.kategorie}</td>
-					<td>${value.attribute}</td>
-					<td>${value.preis}</td>
+					<td class="searchable">${value.artikelstammId}</td>
+					<td class="searchable">${value.bezeichnung}</td>
+					<td class="searchable">${value.kategorie}</td>
+					<td class="searchable">${value.attribute}</td>
+					<td class="searchable">${value.preis}</td>
 					<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
 					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
-					<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/home' />" ><span class="fa fa-minus-circle" aria-hidden="true"></span></a></button></td>
+					<td><form method="POST" action="artikelstammDel"><input type="hidden" id="artikelstammId" name="artikelstammId" value="${value.artikelstammId}"/><input class="table_button tooltip" data-tooltip="Löschen" type="submit"><span class="fa fa-minus-circle" aria-hidden="true"></span></form></td>
 				</tr>
 			</tbody>
 			</c:forEach>

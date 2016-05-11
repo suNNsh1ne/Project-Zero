@@ -21,16 +21,15 @@
 		</thead>
 			<tbody>
 			<c:forEach items="${Lager}" var="value">
-
 				<tr>
-					<td>${value.lagerID}</td>
-					<td>${value.name}</td>
-					<td>${value.ort}</td>
-					<td>${value.kapazität}</td>
-					<td>${value.auslastung}</td>
+					<td class="searchable">${value.lagerID}</td>
+					<td class="searchable">${value.name}</td>
+					<td class="searchable">${value.ort}</td>
+					<td class="searchable">${value.kapazität}</td>
+					<td class="searchable">${value.auslastung}</td>
 					<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
 					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
-					<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/home' />" ><span class="fa fa-minus-circle" aria-hidden="true"></span></a></button></td>
+					<td><form method="POST" action="lagerDel"><input type="hidden" id="lagerID" name="lagerID" value="${value.lagerID}"/><input class="table_button tooltip" data-tooltip="Löschen" type="submit"><span class="fa fa-minus-circle" aria-hidden="true"></span></form></td>
 				</tr>
 			</tbody>
 			</c:forEach>

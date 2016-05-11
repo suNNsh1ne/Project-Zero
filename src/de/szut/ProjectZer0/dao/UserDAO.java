@@ -13,6 +13,7 @@ public interface UserDAO {
 	User findById(int id);
     void saveUser(User user);  
     void deleteUserByUsername(String username);
+    void deleteUserById(String id);
     List<User> getAllUser();
     User findUserByUsername(String username);
 
