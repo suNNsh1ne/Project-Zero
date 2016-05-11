@@ -10,6 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
+/*
+ * Dieser Controller ist für den Login sowie den Logout eines Benutzers zuständig
+ */
 
 @Controller
 public class LoginController {
@@ -19,6 +22,10 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 
+	/*
+	 * Dieses Mapping beinhaltet das setzten zweier Standard
+	 * Benutzer beim erstmaligem aufruf des Logins
+	 */
 	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
 	public String erpLogin() {
 		if (firstTime == true) {
@@ -39,6 +46,10 @@ public class LoginController {
 		return "login";
 	}
 
+	/*
+	 * Dieses Mapping prüft ob ein Login versuch korrekt war oder nicht und
+	 * setzt dementsprechend einen User in die Session
+	 */
 	@RequestMapping("/loginCheck")
 	public String erpLoginCheck(HttpServletRequest req) {
 		String username = req.getParameter("username");
@@ -72,6 +83,10 @@ public class LoginController {
 		return new ModelAndView("redirect:login", map);
 	}
 
+	/*
+	 * Mit diesem Mapping wird ein Logout durchgeführt indem das
+	 * "user" Attribut der Session auf null gesetzt wird
+	 */
 	@RequestMapping("/logout")
 	private String returnUserList(HttpServletRequest req) {
 		if (req.getSession().getAttribute("user") != null) {

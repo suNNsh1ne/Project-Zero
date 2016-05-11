@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import de.szut.ProjectZer0.model.Lieferant;
 import de.szut.ProjectZer0.service.LieferantService;
+/*
+ * Dieser Controller ist für das Mapping des Models bzw. der Tabelle Lieferant zuständig.
+ * Es existieren Mappings für die JSPs zum anlegen neuer Datensätze (LieferantNew) 
+ * sowie dem anzeigen (LieferantList) dieser.
+ */
 
 @Controller
 public class LieferantController {
@@ -30,6 +35,10 @@ public class LieferantController {
         return "home";
 	}
 	
+	/*
+	 * Dieses Mapping erstellt ein leeres Lieferant Objekt und gibt 
+	 * dieses über die ModelMap an die JSP weiter.
+	 */
 	@RequestMapping(value = { "/lieferantNew" }, method = RequestMethod.GET)
 	public String lieferantNew(HttpServletRequest req, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
@@ -41,6 +50,10 @@ public class LieferantController {
 		return "redirect:login";
 	}
 
+	/*
+	 * Dieses Mapping empfängt das nun mit Daten gefüllte Objekt und 
+	 * speichert es über unseren LieferantService in der Datenbank.
+	 */
 	@RequestMapping(value = { "/lieferantNew" }, method = RequestMethod.POST)
 	public String saveLieferant(HttpServletRequest req, Lieferant lieferant, BindingResult result, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
@@ -58,6 +71,11 @@ public class LieferantController {
 		return "redirect:login";
 	}
 
+	/*
+	 * Dieses Mapping zum anzeigen aller Datensätze der Lieferant Tabelle in der Datenbank da.
+	 * Alle Datensätze werden über den LieferantService aus der Datenbank geholt und über die 
+	 * ModelMap an die JSP übergeben
+	 */
 	@RequestMapping(value = { "/lieferantList" }, method = RequestMethod.GET)
 	public String listAllLieferant(HttpServletRequest req, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
