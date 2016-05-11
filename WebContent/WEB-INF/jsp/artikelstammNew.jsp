@@ -13,7 +13,7 @@
 
 				<tr>
 					<td><label for="Beschreibung"></label></td>
-					<td><form:password path="Beschreibung"
+					<td><form:input path="Beschreibung"
 							placeholder="Beschreibung" id="Beschreibung" /></td>
 					<td><form:errors path="Beschreibung" class="error" /></td>
 				</tr>
