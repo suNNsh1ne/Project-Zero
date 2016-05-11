@@ -36,7 +36,7 @@ public class MitarbeiterController {
         mitarbeiterService.saveMitarbeiter(mitarbeiter);
  
         //model.addAttribute("success", "Mitarbeiter " + mitarbeiter.getBezeichnung() + " registered successfully.");
-        return "mitarbeiterList";
+        return "redirect:mitarbeiterList";
     }
 	
 	@RequestMapping(value = {"/mitarbeiterList"}, method = RequestMethod.GET)

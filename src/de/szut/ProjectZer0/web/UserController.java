@@ -64,7 +64,7 @@ public class UserController {
 
 	@RequestMapping("/userDel")
 	public String userDelete(){
-		//userService.deleteUserByUsername("admin");
+		userService.deleteUserByUsername("admin");
 		return "redirect:userlist";
 	}
 	

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import de.szut.ProjectZer0.model.Bestandsartikel;
 import de.szut.ProjectZer0.model.Warenausgang;
 import de.szut.ProjectZer0.service.WarenausgangService;
 
@@ -20,8 +22,8 @@ public class WarenausgangController {
 	@RequestMapping(value = {"/warenausgangList"}, method = RequestMethod.GET)
 	public String listAllWarenausgang(ModelMap model)
 	{
-		List<Warenausgang> warenausgang = warenausgangService.getAllBestandsartikel();
-		model.addAttribute("Warenausgang", warenausgang);
+		List<Bestandsartikel> bestandsartikel = warenausgangService.getAllBestandsartikel();
+		model.addAttribute("Bestandsartikel", bestandsartikel);
 		return "warenausgangList";
 	}
 }

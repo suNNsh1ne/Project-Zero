@@ -4,20 +4,22 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
+
+import de.szut.ProjectZer0.model.Bestandsartikel;
 import de.szut.ProjectZer0.model.Warenausgang;
 
 @Repository("WarenausgangDAO")
-public class WarenausgangDAOImpl extends AbstractDAO<Integer, Warenausgang> implements WarenausgangDAO{
+public class WarenausgangDAOImpl extends AbstractDAO<Integer, Bestandsartikel> implements WarenausgangDAO{
 
 	@Override
-	public Warenausgang findById(int id) {
+	public Bestandsartikel findById(int id) {
 		return getByKey(id);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Warenausgang> getAllBestandsartikel() {
+	public List<Bestandsartikel> getAllBestandsartikel() {
 		Criteria criteria = createEntityCriteria();
-        return (List<Warenausgang>) criteria.list();
+        return (List<Bestandsartikel>) criteria.list();
 	}
 
 }
