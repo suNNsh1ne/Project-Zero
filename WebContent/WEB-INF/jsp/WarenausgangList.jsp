@@ -27,9 +27,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<br /> <a href="<c:url value='/menu/mitarbeiterNew' />">
-			<button class="button">Mitarbeiter hinzufügen</button>
-		</a>
+		<br />
 		
 		<script type="text/javascript">				
 			document.title = 'Warenausgang';

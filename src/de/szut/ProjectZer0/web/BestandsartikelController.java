@@ -52,6 +52,5 @@ public class BestandsartikelController {
 			return "bestandsartikelList";
 		}
 		return "redirect:login";
-
 	}
 }

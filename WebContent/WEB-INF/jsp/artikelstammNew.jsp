@@ -48,9 +48,12 @@
 
 				<tr>
 					<td><label for="Lieferanten"></label></td>
-					<td><form:input path="Lieferanten" placeholder="Lieferanten"
-							id="Lieferanten" /></td>
-					<td><form:errors path="Lieferanten" class="error" /></td>
+					<td><form:select path="lieferantZuweisung">
+						<form:option value="-" label ="--Lieferanten auswaehlen"/>
+						<form:options items="${Lieferanten}" itemValue="Ansprechpartner" itemLabel="Ansprechpartner"/>
+					</form:select>
+					</td>
+					<td><form:errors path="lieferantZuweisung" class="error" /></td>
 				</tr>
 
 				<tr>

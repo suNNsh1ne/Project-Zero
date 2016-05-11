@@ -32,7 +32,7 @@
                             <input type="submit" value="Register" class="button"/>
                         </c:otherwise>
                     </c:choose>
-                    <a href="<c:url value='/menu/userList' />"><button class="button">Accountlist</button></a>
+                    <a href="<c:url value='/userList' />"><button class="button">Accountlist</button></a>
                 </td>
             </tr>
         </table>
