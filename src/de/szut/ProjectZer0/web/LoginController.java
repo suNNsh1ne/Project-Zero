@@ -13,30 +13,29 @@ import de.szut.ProjectZer0.service.UserService;
 
 @Controller
 public class LoginController {
-	
+
 	boolean firstTime = true;
 
 	@Autowired
-	UserService userService;	
-	
-	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
+	UserService userService;
+
+	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
 	public String erpLogin() {
-		if(firstTime == true)
-		{
-		User user = new User();
-		user.setPassword("admin");
-		user.setUsername("admin");
-		user.setPermissionPriority(3);
-		userService.saveUser(user);
-		
-		User user2 = new User();
-		user2.setPassword("root");
-		user2.setUsername("alpine");
-		user2.setPermissionPriority(3);
-		userService.saveUser(user2);
-		firstTime=false;
+		if (firstTime == true) {
+			User user = new User();
+			user.setPassword("admin");
+			user.setUsername("admin");
+			user.setPermissionPriority(3);
+			userService.saveUser(user);
+
+			User user2 = new User();
+			user2.setPassword("root");
+			user2.setUsername("alpine");
+			user2.setPermissionPriority(3);
+			userService.saveUser(user2);
+			firstTime = false;
 		}
-		
+
 		return "login";
 	}
 
@@ -49,11 +48,10 @@ public class LoginController {
 		if (user == null) {
 			// send 'no user/password match' message
 			return "redirect:login";
-		} else {
-			req.getSession().setAttribute("user", user);
-			// send 'successful login' screen
-			return "redirect:home";
 		}
+		req.getSession().setAttribute("user", user);
+		// send 'successful login' screen
+		return "redirect:home";
 	}
 
 	private User fetchFromDatabaseIfValid(String username, String password) {
@@ -73,18 +71,13 @@ public class LoginController {
 
 		return new ModelAndView("redirect:login", map);
 	}
-	
-	
+
 	@RequestMapping("/logout")
 	private String returnUserList(HttpServletRequest req) {
-		if(req.getSession().getAttribute("user") != null)
-		{
+		if (req.getSession().getAttribute("user") != null) {
 			req.getSession().setAttribute("user", null);
 			return "login";
 		}
-		else
-		{
-			return "redirect:login";
-		}
+		return "redirect:login";
 	}
 }
