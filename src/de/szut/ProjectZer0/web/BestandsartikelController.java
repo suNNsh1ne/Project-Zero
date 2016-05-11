@@ -14,13 +14,21 @@ import de.szut.ProjectZer0.model.Artikelstamm;
 import de.szut.ProjectZer0.model.Bestandsartikel;
 import de.szut.ProjectZer0.service.ArtikelstammService;
 import de.szut.ProjectZer0.service.BestandsartikelService;
+/*
+ * Dieser Controller ist für das Mapping des Models bzw. der Tabelle Bestandsartikel zuständig.
+ * Es existieren Mappings für die JSPs zum anlegen neuer Datensätze (BestandsartikelNew) 
+ * sowie dem anzeigen (BestandsartikelList) dieser.
+ */
 
 @Controller
 public class BestandsartikelController {
 	@Autowired
 	BestandsartikelService bestandsartikelService;
 
-	
+	/*
+	 * Dieses Mapping erstellt ein leeres Bestandsartikel Objekt und gibt 
+	 * dieses über die ModelMap an die JSP weiter.
+	 */
 	@RequestMapping(value = { "/bestandsartikelNew" }, method = RequestMethod.GET)
 	public String bestandsartikelNew(HttpServletRequest req, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
@@ -32,6 +40,10 @@ public class BestandsartikelController {
 		return "redirect:login";
 	}
 
+	/*
+	 * Dieses Mapping empfängt das nun mit Daten gefüllte Objekt und 
+	 * speichert es über unseren BestandsartikelService in der Datenbank.
+	 */
 	@RequestMapping(value = { "/bestandsartikelNew" }, method = RequestMethod.POST)
 	public String saveBestandsartikel(HttpServletRequest req, @ModelAttribute Bestandsartikel bestandsartikel, BindingResult result,
 			ModelMap model) {
@@ -49,6 +61,11 @@ public class BestandsartikelController {
 		return "redirect:login";
 	}
 
+	/*
+	 * Dieses Mapping zum anzeigen aller Datensätze der Bestandsartikel Tabelle in der Datenbank da.
+	 * Alle Datensätze werden über den BestandsartikelService aus der Datenbank geholt und über die 
+	 * ModelMap an die JSP übergeben
+	 */
 	@RequestMapping(value = { "/bestandsartikelList" }, method = RequestMethod.GET)
 	public String listAllBestandsartikel(HttpServletRequest req, ModelMap model) {
 		if (req.getSession().getAttribute("user") != null) {
