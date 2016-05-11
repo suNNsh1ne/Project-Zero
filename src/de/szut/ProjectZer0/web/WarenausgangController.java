@@ -22,12 +22,9 @@ public class WarenausgangController {
 
 
 	@RequestMapping(value = {"/warenausgangList"}, method = RequestMethod.GET)
-	public String listAllWarenausgang(HttpServletRequest req, ModelMap model) {
-		if (req.getSession().getAttribute("user") != null) {
+	public String listAllWarenausgang(ModelMap model) {
 			List<Bestandsartikel> bestandsartikel = warenausgangService.getAllBestandsartikel();
 			model.addAttribute("Bestandsartikel", bestandsartikel);
 			return "warenausgangList";
-		}
-		return "redirect:login";
 	}
 }
