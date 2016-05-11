@@ -11,8 +11,8 @@
 		var tableObj = $(this),
 			searchText = (options.searchText)?options.searchText:'Search: ',
 			searchPlaceHolder = (options.searchPlaceHolder)?options.searchPlaceHolder:'',
-			divObj = $('<div style="float:right;">'+searchText+'</div><br /><br />'),
-			inputObj = $('<input type="text" placeholder="'+searchPlaceHolder+'" />'),
+			divObj = $('<div style="float:right;" class="search"><span class="fa fa-search search_icon" aria-hidden="true"></span></div><br /><br />'),
+			inputObj = $('<input type="text" placeholder="Suchen" />'),
 			caseSensitive = (options.caseSensitive===true)?true:false,
 			searchFieldVal = '',
 			pattern = '';
