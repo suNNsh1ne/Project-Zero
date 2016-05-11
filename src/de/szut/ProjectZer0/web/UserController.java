@@ -13,12 +13,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import de.szut.ProjectZer0.model.User;
 import de.szut.ProjectZer0.service.UserService;
+/*
+ * Dieser Controller ist für das Mapping des Models bzw. der Tabelle User zuständig.
+ * Es existieren Mappings für die JSPs zum anlegen neuer Datensätze (UserNew) 
+ * sowie dem anzeigen (UserList) dieser.
+ */
 
 @Controller
 public class UserController {
 	@Autowired
 	UserService userService;
 	
+
+	/*
+	 * Dieses Mapping zum anzeigen aller Datensätze der User Tabelle in der Datenbank da.
+	 * Alle Datensätze werden über den UserService aus der Datenbank geholt und über die 
+	 * ModelMap an die JSP übergeben
+	 */
 	@RequestMapping(value = {"/userlist"}, method = RequestMethod.GET)
 	public String listAllUser(HttpServletRequest req, ModelMap model)
 	{
@@ -34,6 +45,10 @@ public class UserController {
 		}
 	}
 	
+	/*
+	 * Dieses Mapping erstellt ein leeres User Objekt und gibt 
+	 * dieses über die ModelMap an die JSP weiter.
+	 */
 	@RequestMapping(value = {"/register"}, method = RequestMethod.GET)
 	public String register(ModelMap model) {
 		User user = new User();
@@ -42,6 +57,10 @@ public class UserController {
         return "register";
 	}
 	
+	/*
+	 * Dieses Mapping empfängt das nun mit Daten gefüllte Objekt und 
+	 * speichert es über unseren UserService in der Datenbank.
+	 */
 	@RequestMapping(value = { "/register" }, method = RequestMethod.POST)
     public String saveAccount(User user, BindingResult result,
             ModelMap model) {
