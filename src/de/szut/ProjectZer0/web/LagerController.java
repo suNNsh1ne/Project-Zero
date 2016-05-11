@@ -15,34 +15,41 @@ import de.szut.ProjectZer0.service.LagerService;
 public class LagerController {
 	@Autowired
 	LagerService lagerService;
-	
-	@RequestMapping(value = {"/lagerNew"}, method = RequestMethod.GET)
-	public String lagerNew(ModelMap model) {
-		Lager lager = new Lager();
-        model.addAttribute("Lager", lager);
-        model.addAttribute("edit", false);
-        return "lagerNew";
+
+	@RequestMapping(value = { "/lagerNew" }, method = RequestMethod.GET)
+	public String lagerNew(HttpServletRequest req, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+			Lager lager = new Lager();
+			model.addAttribute("Lager", lager);
+			model.addAttribute("edit", false);
+			return "lagerNew";
+		}
+		return "redirect:login";
 	}
-	
+
 	@RequestMapping(value = { "/lagerNew" }, method = RequestMethod.POST)
-    public String saveLager(Lager lager, BindingResult result,
-            ModelMap model) {
- 
-        if (result.hasErrors()) {
-            return "lagerNew";
-        }
-         
-        lagerService.saveLager(lager);
- 
-        //model.addAttribute("success", "Lager " + lager.getBezeichnung() + " registered successfully.");
-        return "redirect:lagerList";
-    }
-	
-	@RequestMapping(value = {"/lagerList"}, method = RequestMethod.GET)
-	public String listAllLager(ModelMap model)
-	{
-		List<Lager> lager = lagerService.getAllLager();
-		model.addAttribute("Lager", lager);
-		return "lagerList";
+	public String saveLager(HttpServletRequest req, Lager lager, BindingResult result, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+			if (result.hasErrors()) {
+				return "lagerNew";
+			}
+
+			lagerService.saveLager(lager);
+
+			// model.addAttribute("success", "Lager " + lager.getBezeichnung() +
+			// " registered successfully.");
+			return "lagerList";
+		}
+		return "redirect:login";
+	}
+
+	@RequestMapping(value = { "/lagerList" }, method = RequestMethod.GET)
+	public String listAllLager(HttpServletRequest req, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+			List<Lager> lager = lagerService.getAllLager();
+			model.addAttribute("Lager", lager);
+			return "lagerList";
+		}
+		return "redirect:login";
 	}
 }

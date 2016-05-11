@@ -1,6 +1,9 @@
 <%@ include file="header.jsp"%>
+<script type="text/javascript" src="${cp}/static/js/html-table-search.js"></script>
+<script type="text/javascript" src="${cp}/static/js/livesearch.js"></script>
+
 		<h2>Lager</h2>
-		<table class="table table-hover">
+		<table class="table table-hover search-table">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
