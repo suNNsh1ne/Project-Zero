@@ -5,17 +5,10 @@
 			<form:input type="hidden" path="BestandsartikelId" id="BestandsartikelId" />
 			<table>
 				<tr>
-					<td><label for="Artikelstamm"></label></td>
-					<td><form:input path="Artikelstamm" placeholder="Artikelstamm"
-							id="Artikelstamm" /></td>
-					<td><form:errors path="Artikelstamm" class="error" /></td>
-				</tr>
-
-				<tr>
-					<td><label for="Anzahl"></label></td>
-					<td><form:password path="Anzahl"
-							placeholder="Anzahl" id="Anzahl" /></td>
-					<td><form:errors path="Anzahl" class="error" /></td>
+					<td><label for="anzahl"></label></td>
+					<td><form:input path="anzahl"
+							placeholder="anzahl" id="anzahl" /></td>
+					<td><form:errors path="anzahl" class="error" /></td>
 				</tr>
 
 				<tr>
@@ -26,8 +19,7 @@
 							<c:otherwise>
 								<input type="submit" value="Register" class="button" />
 							</c:otherwise>
-						</c:choose> <a href="<c:url value='/menu/userList' />"><button
-								class="button">Accountlist</button></a></td>
+						</c:choose> </td>
 				</tr>
 			</table>
 		</form:form>

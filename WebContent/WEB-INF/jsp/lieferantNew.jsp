@@ -5,9 +5,9 @@
 	<form:input type="hidden" path="lieferantenId" id="lieferantenId" />
 	<table>
 		<tr>
-			<td><label for="Addresse"></label></td>
-			<td><form:input path="Addresse" placeholder="Addresse" id="Addresse" /></td>
-			<td><form:errors path="Addresse" class="error" /></td>
+			<td><label for="Adresse"></label></td>
+			<td><form:input path="Adresse" placeholder="Adresse" id="Adresse" /></td>
+			<td><form:errors path="Adresse" class="error" /></td>
 		</tr>
 		<tr>
 			<td><label for="Ansprechpartner"></label></td>
@@ -25,7 +25,6 @@
 					<input type="submit" value="Register" class="button" />
 				</c:otherwise>
 			</c:choose> 
-			<a href="<c:url value='/userList' />"><button class="button">Accountlist</button></a></td>
 		</tr>
 	</table>
 </form:form>

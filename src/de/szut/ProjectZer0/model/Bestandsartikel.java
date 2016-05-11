@@ -28,21 +28,21 @@ public class Bestandsartikel {
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable(name = "lagerBestand", joinColumns = { 
-			@JoinColumn(name = "BESTANDSARTIKEL_ID", nullable = false, updatable = true)},
+			@JoinColumn(name = "BESTANDSARTIKEL_ID", nullable = true, updatable = true)},
 			inverseJoinColumns = {@JoinColumn(name = "LAGER_ID", nullable = false, updatable = true)
 	})
 	private Set<Lager> lagerBestand;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ARTIKELSTAMM_ID", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.MERGE)
+	@JoinColumn(name = "ARTIKELSTAMM_ID", nullable = true)
 	private Artikelstamm artikelstamm;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name = "WARENEINGANG_ID", nullable = false)
+	@JoinColumn(name = "WARENEINGANG_ID", nullable = true)
 	private Wareneingang wareneingang;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name = "WARENAUSGANG_ID", nullable = false)
+	@JoinColumn(name = "WARENAUSGANG_ID", nullable = true)
 	private Warenausgang warenausgang;
 	
 	public Set<Lager> getLagerBestand() {

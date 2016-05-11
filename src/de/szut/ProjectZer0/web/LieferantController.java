@@ -22,9 +22,9 @@ public class LieferantController {
 		Lieferant lieferant1 = new Lieferant();
 		Lieferant lieferant2 = new Lieferant();
 		lieferant1.setAnsprechpartner("Klaus");
-		lieferant1.setAddresse("Delmenhorst");
+		lieferant1.setAdresse("Delmenhorst");
 		lieferant2.setAnsprechpartner("Peter");
-		lieferant2.setAddresse("Bremen");
+		lieferant2.setAdresse("Bremen");
 		lieferantService.saveLieferant(lieferant1);
 		lieferantService.saveLieferant(lieferant2);
         return "home";
@@ -53,7 +53,7 @@ public class LieferantController {
 
 			// model.addAttribute("success", "Lieferant " +
 			// lieferant.getBezeichnung() + " registered successfully.");
-			return "lieferantList";
+			return "redirect:lieferantList";
 		}
 		return "redirect:login";
 	}
