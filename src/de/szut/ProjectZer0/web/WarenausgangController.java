@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import de.szut.ProjectZer0.model.Bestandsartikel;
+import de.szut.ProjectZer0.model.Lager;
 import de.szut.ProjectZer0.model.Warenausgang;
 import de.szut.ProjectZer0.service.WarenausgangService;
 
@@ -18,12 +19,15 @@ import de.szut.ProjectZer0.service.WarenausgangService;
 public class WarenausgangController {
 	@Autowired
 	WarenausgangService warenausgangService;
-	
+
+
 	@RequestMapping(value = {"/warenausgangList"}, method = RequestMethod.GET)
-	public String listAllWarenausgang(ModelMap model)
-	{
-		List<Bestandsartikel> bestandsartikel = warenausgangService.getAllBestandsartikel();
-		model.addAttribute("Bestandsartikel", bestandsartikel);
-		return "warenausgangList";
+	public String listAllWarenausgang(HttpServletRequest req, ModelMap model) {
+		if (req.getSession().getAttribute("user") != null) {
+			List<Bestandsartikel> bestandsartikel = warenausgangService.getAllBestandsartikel();
+			model.addAttribute("Bestandsartikel", bestandsartikel);
+			return "warenausgangList";
+		}
+		return "redirect:login";
 	}
 }

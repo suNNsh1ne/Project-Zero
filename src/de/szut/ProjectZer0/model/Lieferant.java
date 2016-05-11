@@ -28,7 +28,7 @@ import javax.persistence.Table;
 		@Column(name = "ANSPRECHPARTNER")
 		private String Ansprechpartner;
 		
-		@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lieferantZuweisung",cascade = CascadeType.ALL)
+		@ManyToMany(fetch = FetchType.EAGER, mappedBy = "lieferantZuweisung",cascade = CascadeType.MERGE)
 		private Set<Artikelstamm> artikelstaemme;
 		
 		@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
