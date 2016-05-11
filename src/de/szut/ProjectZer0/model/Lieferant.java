@@ -26,7 +26,7 @@ import javax.persistence.Table;
 		private int lieferantenId;
 		
 		@Column(name = "ADRESSE")
-		private String Adresse;
+		private String Addresse;
 		
 		@Column(name = "ANSPRECHPARTNER")
 		private String Ansprechpartner;
@@ -83,12 +83,12 @@ import javax.persistence.Table;
 			this.lieferantenId = lieferantenId;
 		}
 
-		public String getAdresse() {
-			return Adresse;
+		public String getAddresse() {
+			return Addresse;
 		}
 
-		public void setAdresse(String adresse) {
-			Adresse = adresse;
+		public void setAddresse(String adresse) {
+			Addresse = adresse;
 		}
 
 		public String getAnsprechpartner() {

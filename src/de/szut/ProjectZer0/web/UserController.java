@@ -62,4 +62,9 @@ public class UserController {
 		return "redirect:login";
 	}
 
+	@RequestMapping("/userDel")
+	public String userDelete(){
+		return "redirect:userlist";
+	}
+	
 }
