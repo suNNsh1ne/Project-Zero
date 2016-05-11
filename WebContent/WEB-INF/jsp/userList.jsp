@@ -30,8 +30,9 @@
 			<td class="searchable">${user.password}</td>
 			<td class="searchable">${user.userId}</td>
 			<td class="searchable">${user.permissionPriority}</td>
-			<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
-			<td><a href="<c:url value='/userDel' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
+			<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
+			<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
+			<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/userDel' />"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
 		</tr>
 	</tbody>
 	</c:forEach>

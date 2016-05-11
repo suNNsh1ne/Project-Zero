@@ -11,6 +11,9 @@
 				<th>ID</th>
 				<th>Addresse</th>
 				<th>Ansprechpartner</th>
+				<th>Artikelstämme</th>
+				<th>Wareneingang</th>
+				<th>Warenausgang</th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -20,10 +23,14 @@
 			<tbody>
 				<tr>
 					<td>${value.lieferantenId}</td>
-					<td>${value.Addresse}</td>
-					<td>${value.Ansprechpartner}</td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
+					<td>${value.adresse}</td>
+					<td>${value.ansprechpartner}</td>
+					<td>${value.artikelstaemme}</td>
+					<td>${value.wareneingang}</td>
+					<td>${value.warenausgang}</td>
+					<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
+					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
+					<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/home' />" ><span class="fa fa-minus-circle" aria-hidden="true"></span></a></button></td>
 				</tr>
 			</tbody>
 			</c:forEach>

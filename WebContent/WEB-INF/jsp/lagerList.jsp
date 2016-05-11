@@ -13,26 +13,24 @@
 				<th>Ort</th>
 				<th>Kapazität</th>
 				<th>Auslastung</th>
-				<th>Bestandsartikel</th>
-				<th>Mitarbeiter</th>
 				<th></th>
 				<th></th>
 				<th></th>
 			</tr>
+
 		</thead>
-			<c:forEach items="${Mitarbeiter}" var="value">
 			<tbody>
+			<c:forEach items="${Lager}" var="value">
+
 				<tr>
-					<td>${value.LagerId}</td>
+					<td>${value.lagerID}</td>
 					<td>${value.name}</td>
-					<td>${value.Ort}</td>
-					<td>${value.Kapazität}</td>
-					<td>${value.Auslastung}</td>
-					<td>${value.Bestandsartikel}</td>
-					<td>${value.Mitarbeiter}</td>
-					<td><a href="<c:url value='/register' />" class="tooltip" data-tooltip="Add"><span class="fa fa-plus-square" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Edit"><span class="fa fa-pencil" aria-hidden="true"></span></a></td>
-					<td><a href="<c:url value='/home' />" class="tooltip" data-tooltip="Delete"><span class="fa fa-minus-circle" aria-hidden="true"></span></a></td>
+					<td>${value.ort}</td>
+					<td>${value.kapazität}</td>
+					<td>${value.auslastung}</td>
+					<td><button class="table_button tooltip" data-tooltip="Hinzufügen"><a href="<c:url value='/register' />"><span class="fa fa-plus-square" aria-hidden="true"></span></a></button></td>
+					<td><button class="table_button tooltip" data-tooltip="Bearbeiten"><a href="<c:url value='/home' />" ><span class="fa fa-pencil" aria-hidden="true"></span></a></button></td>
+					<td><button class="table_button tooltip" data-tooltip="Löschen"><a href="<c:url value='/home' />" ><span class="fa fa-minus-circle" aria-hidden="true"></span></a></button></td>
 				</tr>
 			</tbody>
 			</c:forEach>
